@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b6b5e">
+  <title>CHIATECH WAEC Chemistry Practical Portal</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div id="authGate" class="auth-gate" aria-live="polite">
+    <section class="login-panel">
+      <div class="brand-row">
+        <img src="assets/logo.png" alt="CHIATECH logo">
+        <div>
+          <p class="eyebrow">Student learning portal</p>
+          <h1>WAEC Chemistry Practical Master Portal</h1>
+        </div>
+      </div>
+
+      <p class="login-copy">
+        Welcome to your practical chemistry class. Enter your PIN to open lessons,
+        diagrams, calculations, and WAEC-style practice tests prepared for serious revision.
+      </p>
+
+      <form id="pinForm" class="pin-form" autocomplete="one-time-code">
+        <label for="pinInput">Access PIN</label>
+        <div class="pin-entry">
+          <input id="pinInput" name="pin" inputmode="numeric" minlength="4" maxlength="20" placeholder="Enter PIN" required>
+          <button type="submit">Unlock</button>
+        </div>
+        <p id="authMessage" class="auth-message">Enter your class PIN to begin.</p>
+      </form>
+
+      <div class="login-actions">
+        <button id="offlineUnlock" type="button" class="quiet-button">Continue learning</button>
+        <button id="installApp" type="button" class="quiet-button" hidden>Install on this device</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="appShell" class="app-shell" hidden>
+    <aside class="sidebar">
+      <a class="identity" href="#dashboard" aria-label="Go to dashboard">
+        <img src="assets/logo2.PNG" alt="">
+        <span>
+          <strong>CHIATECH</strong>
+          <small>Chemistry Practical</small>
+        </span>
+      </a>
+
+      <nav class="side-nav" aria-label="Main navigation">
+        <a href="#dashboard" data-route="dashboard">Dashboard</a>
+        <a href="#quantitative" data-route="quantitative">Quantitative</a>
+        <a href="#qualitative" data-route="qualitative">Qualitative</a>
+        <a href="#tests" data-route="tests">Tests</a>
+        <a href="#toolkit" data-route="toolkit">Toolkit</a>
+      </nav>
+
+      <div class="sync-card">
+        <span id="syncDot" class="sync-dot"></span>
+        <div>
+          <strong id="syncTitle">Class ready</strong>
+          <small id="syncText">Your lessons are loading</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">WAEC practical class for OLevel</p>
+          <h1>WAEC Chemistry Practical Tutorial Portal</h1>
+        </div>
+        <div class="top-actions">
+          <button id="installAppTop" type="button" class="icon-button" hidden title="Install app">Install</button>
+          <button id="lockApp" type="button" class="icon-button" title="Lock portal">Lock</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active-view">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Learn. Know. Do. Create success.</p>
+            <h2>Chemistry practical mastery, organized like a real exam room.</h2>
+            <p>
+              Move from theory to diagrams, titration calculations, qualitative
+              observations, and full WAEC-style tests with marking schemes.
+            </p>
+            <div class="hero-actions">
+              <a href="#quantitative" class="primary-link">Start lessons</a>
+              <a href="#tests" class="secondary-link">Open tests</a>
+            </div>
+          </div>
+          <img src="assets/diagrams/waecchemistrypractical.PNG" alt="Chemistry practical tutorial preview">
+        </div>
+
+        <div class="metrics">
+          <article>
+            <strong>6</strong>
+            <span>Core lesson modules</span>
+          </article>
+          <article>
+            <strong>12</strong>
+            <span>Practice test areas</span>
+          </article>
+          <article>
+            <strong>Anywhere</strong>
+            <span>Keep studying on this device</span>
+          </article>
+        </div>
+
+        <div class="learning-grid">
+          <article class="lesson-card">
+            <img src="assets/diagrams/titration-setup-labelled.PNG" alt="">
+            <span>Quantitative Analysis</span>
+            <h3>Titration, titres and calculation flow</h3>
+            <a href="#quantitative">Open module</a>
+          </article>
+          <article class="lesson-card">
+            <img src="assets/diagrams/cation-test-tubes.PNG" alt="">
+            <span>Qualitative Analysis</span>
+            <h3>Observation, inference and ion confirmation</h3>
+            <a href="#qualitative">Open module</a>
+          </article>
+          <article class="lesson-card">
+            <img src="assets/diagrams/burette-reading.png" alt="">
+            <span>Exam Toolkit</span>
+            <h3>Accuracy rules, apparatus and diagrams</h3>
+            <a href="#toolkit">Open toolkit</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="quantitative" class="view">
+        <div class="section-head">
+          <p class="eyebrow">Titration masterclass</p>
+          <h2>Quantitative Analysis</h2>
+        </div>
+        <div class="module-list">
+          <a href="QuantitativeAnalysis/prt1quantitativeanalysis.html">Part 1: Titration basics</a>
+          <a href="QuantitativeAnalysis/prt2quantitativeanalysis.html">Part 2: Advanced calculations</a>
+          <a href="QuantitativeAnalysis/prt3quantitativeanalysis.html">Part 3: Purity, dilution and exam traps</a>
+        </div>
+        <div class="note-band">
+          Average only concordant titres. Keep rough titre out of your calculation.
+        </div>
+      </section>
+
+      <section id="qualitative" class="view">
+        <div class="section-head">
+          <p class="eyebrow">Salt analysis class</p>
+          <h2>Qualitative Analysis</h2>
+        </div>
+        <div class="module-list">
+          <a href="QualitativeAnalysis/prt1qlativeanalysis.html">Part 1: Cations and basic observations</a>
+          <a href="QualitativeAnalysis/prt2qualitativeanalysis.html">Part 2: Anions and gas tests</a>
+          <a href="QualitativeAnalysis/prt3qualitativeanalysis.html">Part 3: Mixed salt reporting</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Test</th><th>Observation</th><th>Inference</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Carbonate + acid</td><td>Effervescence; lime water turns milky</td><td>CO2 from carbonate</td></tr>
+              <tr><td>NH4+ + NaOH + warm</td><td>Pungent gas turns red litmus blue</td><td>Ammonia evolved</td></tr>
+              <tr><td>Cu2+ + excess NH3</td><td>Deep blue solution</td><td>Copper(II) confirmed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tests" class="view">
+        <div class="section-head">
+          <p class="eyebrow">Exam simulation</p>
+          <h2>Practice Tests</h2>
+        </div>
+        <div id="testGrid" class="test-grid"></div>
+      </section>
+
+      <section id="toolkit" class="view">
+        <div class="section-head">
+          <p class="eyebrow">Practical survival kit</p>
+          <h2>Toolkit</h2>
+        </div>
+        <div class="tool-grid">
+          <article>
+            <img src="assets/diagrams/burette-reading.png" alt="">
+            <h3>Burette reading</h3>
+            <p>Read the bottom of the meniscus at eye level and record to two decimal places.</p>
+          </article>
+          <article>
+            <img src="assets/diagrams/filtration.png" alt="">
+            <h3>Filtration</h3>
+            <p>Label filter funnel, filter paper, residue and filtrate clearly in diagrams.</p>
+          </article>
+          <article>
+            <img src="assets/diagrams/laboratoryreagents.PNG" alt="">
+            <h3>Reagents</h3>
+            <p>Know what NaOH, NH3, AgNO3, BaCl2, acids and indicators are used to test.</p>
+          </article>
+          <article>
+            <img src="assets/diagrams/titration-setup-labelled.PNG" alt="">
+            <h3>Titration setup</h3>
+            <p>Identify the burette, clamp, retort stand, conical flask, indicator and white tile.</p>
+          </article>
+          <article>
+            <img src="assets/diagrams/passingco2overlimeh2o.PNG" alt="">
+            <h3>CO2 gas test</h3>
+            <p>Carbon dioxide from carbonate turns lime water milky during confirmation.</p>
+          </article>
+          <article>
+            <img src="assets/diagrams/pb2-cation-test-flow.PNG" alt="">
+            <h3>Lead(II) test flow</h3>
+            <p>Use the flow diagram to connect observations with correct ion inferences.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.PORTAL_CONFIG = {
+      appsScriptUrl: "https://script.google.com/macros/s/AKfycbwlmbkEj9-0YePQ5UpgzdpMlKMX3KP4Fyo0wQWIev8rI6cCrj6pxUzkJKLyZ5XpBbp_yg/exec"
+    };
+  </script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

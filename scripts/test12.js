@@ -1,0 +1,615 @@
+// test12.js
+// WAEC Chemistry Practical — Test 12
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.title = "WAEC Chemistry Practical Test 12";
+
+  document.body.innerHTML = `
+<header>
+  <h1>WAEC Chemistry Practical — Test 12</h1>
+  <p>
+    Final modelled practical examination: complete titration, qualitative analysis,
+    diagram tasks, reagent facts, common errors and accuracy strategies for WAEC-style marking.
+  </p>
+</header>
+
+<main>
+
+<section>
+  <h2>Final Reagent and Equipment Summary</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>A: Dilute H₂SO₄</h3>
+      <p>Strong dibasic acid. Used in titration against NaOH and also forms white PbSO₄ with Pb²⁺.</p>
+      <div class="formula">\\[H_2SO_4 \\rightarrow 2H^+ + SO_4^{2-}\\]</div>
+    </div>
+
+    <div class="card">
+      <h3>B: NaOH Solution</h3>
+      <p>Contains \\(4.0g\\,dm^{-3}\\) NaOH. It is a strong alkali used in titration and cation testing.</p>
+      <div class="formula">\\[C=\\frac{4.0}{40}=0.100mol\\,dm^{-3}\\]</div>
+    </div>
+
+    <div class="card">
+      <h3>C: PbCO₃ + Starch</h3>
+      <p>White mixture. PbCO₃ gives CO₂ with acid. Starch gives blue-black colour with iodine.</p>
+    </div>
+
+    <div class="card">
+      <h3>HNO₃</h3>
+      <p>Best acid for dissolving PbCO₃ before cation tests because nitrate salts are generally soluble.</p>
+    </div>
+
+    <div class="card">
+      <h3>NaOH and NH₃</h3>
+      <p>Used to test cations. Pb²⁺ gives white precipitate with both; dissolves in excess NaOH but not in excess NH₃.</p>
+    </div>
+
+    <div class="card">
+      <h3>BaCl₂ and AgNO₃</h3>
+      <p>BaCl₂ tests for sulphate. AgNO₃ tests for chloride. They are included to test students’ reasoning.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Visual Lab Board</h2>
+
+  <div class="grid">
+    <div class="lab">
+      <h3>Titration Setup</h3>
+      <svg viewBox="0 0 320 220">
+        <line x1="60" y1="25" x2="60" y2="195" stroke="#334155" stroke-width="5"/>
+        <line x1="40" y1="195" x2="100" y2="195" stroke="#334155" stroke-width="5"/>
+        <rect x="120" y="20" width="22" height="125" fill="#dbeafe" stroke="#1e40af" stroke-width="3"/>
+        <line x1="131" y1="145" x2="131" y2="168" stroke="#1e40af" stroke-width="3"/>
+        <line x1="60" y1="48" x2="120" y2="48" stroke="#334155" stroke-width="4"/>
+        <polygon points="115,180 190,180 170,130 135,130" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+        <rect x="105" y="185" width="110" height="10" fill="#f8fafc" stroke="#64748b"/>
+        <text x="132" y="14" font-size="14" text-anchor="middle">A in burette</text>
+        <text x="153" y="205" font-size="14" text-anchor="middle">B + indicator</text>
+      </svg>
+    </div>
+
+    <div class="lab">
+      <h3>Filtration Setup</h3>
+      <svg viewBox="0 0 320 220">
+        <polygon points="115,40 205,40 165,105 155,105" fill="#f8fafc" stroke="#475569" stroke-width="4"/>
+        <polygon points="130,48 190,48 164,93 156,93" fill="#e2e8f0"/>
+        <rect x="120" y="120" width="80" height="75" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="4"/>
+        <rect x="128" y="158" width="64" height="25" fill="#60a5fa" opacity=".45"/>
+        <text x="160" y="32" font-size="14" text-anchor="middle">Residue</text>
+        <text x="160" y="210" font-size="14" text-anchor="middle">Filtrate</text>
+      </svg>
+    </div>
+
+    <div class="lab">
+      <h3>CO₂ Lime Water Test</h3>
+      <svg viewBox="0 0 320 220">
+        <rect x="55" y="60" width="55" height="115" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="4"/>
+        <rect x="65" y="130" width="35" height="35" fill="#e2e8f0"/>
+        <path d="M100 70 C155 50, 165 70, 195 95" fill="none" stroke="#334155" stroke-width="4"/>
+        <rect x="200" y="80" width="60" height="110" rx="10" fill="#ecfeff" stroke="#0891b2" stroke-width="4"/>
+        <rect x="210" y="135" width="40" height="40" fill="#cffafe"/>
+        <circle cx="225" cy="150" r="4" fill="#0891b2"/>
+        <circle cx="238" cy="160" r="4" fill="#0891b2"/>
+        <text x="82" y="195" font-size="13" text-anchor="middle">C + HNO₃</text>
+        <text x="230" y="205" font-size="13" text-anchor="middle">Lime water</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Class Section: The Lab of Explanations</h2>
+  <button onclick="toggleBlock('classroom')">ENTER CLASS LAB</button>
+
+  <div id="classroom" class="hidden">
+
+    <div class="talk">
+      <strong>Teacher:</strong> Candidate, this final test is designed like real WAEC practical.
+      You must behave like a practical chemist: measure, observe, infer and explain.
+    </div>
+
+    <div class="talk">
+      <strong>Student:</strong> Sir, what should I do first in titration?
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> Rinse the burette with A and the pipette with B. Fill the burette with A.
+      Pipette B into the conical flask, add indicator, then titrate carefully until the endpoint appears.
+    </div>
+
+    <div class="note">
+      <strong>Accuracy strategy:</strong> Near the endpoint, add A dropwise, swirl continuously,
+      and wash down the sides of the flask with distilled water if droplets stick to the wall.
+    </div>
+
+    <div class="talk">
+      <strong>Student:</strong> Why is the expected titre not 25 cm³?
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> Because \\(H_2SO_4\\) is dibasic. \\(1\\) mole of \\(H_2SO_4\\) neutralizes
+      \\(2\\) moles of NaOH. So the acid volume is expected to be about half of the alkali volume
+      when their molarities are close.
+    </div>
+
+    <div class="formula">
+      \\[
+      H_2SO_4 + 2NaOH \\rightarrow Na_2SO_4 + 2H_2O
+      \\]
+    </div>
+
+    <div class="talk">
+      <strong>Student:</strong> How do I handle C?
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> C is a solid mixture. Water gives a suspension. Iodine checks starch.
+      Acid checks carbonate. The acid solution formed after carbonate reacts gives \\(Pb^{2+}\\) for cation tests.
+    </div>
+
+    <div class="danger">
+      <strong>WAEC trap:</strong> Do not write “CO₂” as the observation. Write:
+      “Effervescence; colourless odourless gas evolved; lime water turns milky.”
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> BaCl₂ and AgNO₃ are not wasted reagents. They teach you to identify negative results.
+      In this specimen, sulphate and chloride are not the original anions, so BaCl₂ and AgNO₃ should not give the
+      positive results expected for sulphate or chloride.
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Enter Final Test 12 Question Paper</h2>
+  <button class="gold" onclick="toggleBlock('paper')">OPEN TEST 12</button>
+
+  <div id="paper" class="hidden">
+
+    <h3>Question 1 — Quantitative Analysis</h3>
+
+    <p>
+      A is dilute tetraoxosulphate(VI) acid, \\(H_2SO_4\\). B is sodium hydroxide solution
+      containing \\(4.0g\\) of NaOH per \\(dm^3\\).
+    </p>
+
+    <p>
+      Put A into the burette. Pipette \\(25.0cm^3\\) of B into a conical flask.
+      Add 2 drops of phenolphthalein and titrate with A until the pink colour just disappears.
+      Repeat the titration to obtain concordant titres.
+    </p>
+
+    <ol>
+      <li>Tabulate your readings.</li>
+      <li>Calculate the average titre.</li>
+      <li>Calculate the concentration of B in \\(mol\\,dm^{-3}\\).</li>
+      <li>Calculate the concentration of A in \\(mol\\,dm^{-3}\\).</li>
+      <li>Calculate the concentration of A in \\(g\\,dm^{-3}\\).</li>
+      <li>Calculate the number of moles of \\(H^+\\) in the average titre.</li>
+      <li>Calculate the volume of A needed for \\(20.0cm^3\\) of B.</li>
+      <li>State the endpoint colour change with phenolphthalein.</li>
+      <li>If methyl orange were used, state the expected colour change.</li>
+    </ol>
+
+    <h3>Question 2 — Qualitative Analysis</h3>
+
+    <p>
+      C is a uniform mixture of lead(II) carbonate and starch. Carry out the following tests.
+      Record observations and inferences.
+    </p>
+
+    <ol>
+      <li>Add distilled water to C and shake. Test with red and blue litmus papers.</li>
+      <li>Filter the mixture and keep both residue and filtrate.</li>
+      <li>Add iodine solution to a portion of the residue.</li>
+      <li>Add dilute \\(HNO_3\\) to another portion of the residue and warm gently.</li>
+      <li>Pass any gas evolved into lime water.</li>
+      <li>Divide the resulting acid solution into six portions.</li>
+      <li>To portion I, add NaOH(aq) in drops and then in excess.</li>
+      <li>To portion II, add NH₃(aq) in drops and then in excess.</li>
+      <li>To portion III, add dilute H₂SO₄(aq).</li>
+      <li>To portion IV, add dilute HCl(aq).</li>
+      <li>To portion V, add BaCl₂(aq), followed by excess dilute HNO₃.</li>
+      <li>To portion VI, add AgNO₃(aq), followed by excess dilute HNO₃.</li>
+    </ol>
+
+    <h3>Question 3 — Practical Knowledge, Diagrams and Error Control</h3>
+
+    <ol>
+      <li>Draw and label the titration setup used in Question 1.</li>
+      <li>Draw and label the filtration setup used in Question 2.</li>
+      <li>Draw and label the CO₂ gas test setup with lime water.</li>
+      <li>Draw a burette meniscus showing \\(12.15cm^3\\).</li>
+      <li>State four precautions for accurate titration.</li>
+      <li>State two reasons for rinsing apparatus with the solution to be used.</li>
+      <li>State the colour of phenolphthalein and methyl orange in acid and alkali.</li>
+      <li>State one error that can make titre values too high.</li>
+      <li>State one error that can make titre values too low.</li>
+      <li>Explain why dilute \\(HNO_3\\) is preferred before AgNO₃ or BaCl₂ tests.</li>
+      <li>State the role of each: BaCl₂, AgNO₃, iodine solution, lime water, NaOH and NH₃.</li>
+      <li>Differentiate observation from inference using carbonate as example.</li>
+    </ol>
+
+    <button class="blue" onclick="toggleBlock('solution')">VIEW FINAL WAEC MARKING SCHEME</button>
+  </div>
+</section>
+
+<section id="solution" class="hidden">
+  <h2>Final WAEC-Style Marking Scheme and Practical Explanation</h2>
+
+  <h3>Question 1 Solution</h3>
+
+  <table>
+    <tr>
+      <th>Titration</th>
+      <th>Rough</th>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>3rd</th>
+    </tr>
+    <tr>
+      <td>Final burette reading / cm³</td>
+      <td>12.45</td>
+      <td>12.15</td>
+      <td>12.10</td>
+      <td>12.15</td>
+    </tr>
+    <tr>
+      <td>Initial burette reading / cm³</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Volume of A used / cm³</td>
+      <td>12.45</td>
+      <td>12.15</td>
+      <td>12.10</td>
+      <td>12.15</td>
+    </tr>
+  </table>
+
+  <div class="formula">
+    \\[
+    Average\\ titre=\\frac{12.15+12.10+12.15}{3}=12.13cm^3
+    \\]
+  </div>
+
+  <div class="formula">
+    \\[
+    Molar\\ mass\\ of\\ NaOH=23+16+1=40g\\,mol^{-1}
+    \\]
+    \\[
+    C_B=\\frac{4.0}{40}=0.100mol\\,dm^{-3}
+    \\]
+  </div>
+
+  <div class="formula">
+    \\[
+    H_2SO_4:NaOH=1:2
+    \\]
+    \\[
+    \\frac{C_A V_A}{C_B V_B}=\\frac{1}{2}
+    \\]
+    \\[
+    \\frac{C_A\\times12.13}{0.100\\times25.0}=\\frac{1}{2}
+    \\]
+    \\[
+    C_A=\\frac{0.100\\times25.0}{2\\times12.13}=0.103mol\\,dm^{-3}
+    \\]
+  </div>
+
+  <div class="formula">
+    \\[
+    Molar\\ mass\\ of\\ H_2SO_4=2(1)+32+4(16)=98g\\,mol^{-1}
+    \\]
+    \\[
+    Concentration\\ in\\ g\\,dm^{-3}=0.103\\times98=10.1g\\,dm^{-3}
+    \\]
+  </div>
+
+  <div class="formula">
+    \\[
+    n(H_2SO_4)=\\frac{0.103\\times12.13}{1000}=1.25\\times10^{-3}mol
+    \\]
+    \\[
+    n(H^+)=2\\times1.25\\times10^{-3}=2.50\\times10^{-3}mol
+    \\]
+  </div>
+
+  <div class="formula">
+    \\[
+    V_A\\ for\\ 20.0cm^3\\ B=
+    \\frac{0.100\\times20.0}{2\\times0.103}=9.71cm^3
+    \\]
+  </div>
+
+  <div class="note">
+    Phenolphthalein endpoint: pink to colourless.  
+    Methyl orange endpoint if used: yellow to orange/pink.
+  </div>
+
+  <h3>Question 2 Solution</h3>
+
+  <table>
+    <tr><th>Test</th><th>Observation</th><th>Inference</th></tr>
+    <tr>
+      <td>C + water + litmus</td>
+      <td>White suspension; no change on red or blue litmus.</td>
+      <td>Neutral/near-neutral insoluble mixture.</td>
+    </tr>
+    <tr>
+      <td>Filtration</td>
+      <td>Colourless filtrate and white residue obtained.</td>
+      <td>Insoluble residue present.</td>
+    </tr>
+    <tr>
+      <td>Residue + iodine solution</td>
+      <td>Blue-black colouration formed.</td>
+      <td>Starch present.</td>
+    </tr>
+    <tr>
+      <td>Residue + dilute HNO₃ + warming</td>
+      <td>Effervescence; colourless odourless gas evolved.</td>
+      <td>Carbonate suspected; CO₂ evolved.</td>
+    </tr>
+    <tr>
+      <td>Gas + lime water</td>
+      <td>Lime water turns milky.</td>
+      <td>CO₂ confirmed; CO₃²⁻ present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NaOH in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Al³⁺ or Zn²⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NaOH</td>
+      <td>White precipitate dissolves.</td>
+      <td>Amphoteric ion present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NH₃ in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Al³⁺ or Zn²⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NH₃</td>
+      <td>White precipitate remains insoluble.</td>
+      <td>Pb²⁺ indicated.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + dilute H₂SO₄</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺ confirmed as PbSO₄.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + dilute HCl</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺ confirmed as PbCl₂.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + BaCl₂ + dilute HNO₃</td>
+      <td>No white precipitate.</td>
+      <td>SO₄²⁻ absent in original specimen.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + AgNO₃ + dilute HNO₃</td>
+      <td>No white precipitate.</td>
+      <td>Cl⁻ absent in original specimen.</td>
+    </tr>
+  </table>
+
+  <h3>Key Equations</h3>
+
+  <div class="formula">
+    \\[
+    PbCO_3(s)+2HNO_3(aq)\\rightarrow Pb(NO_3)_2(aq)+CO_2(g)+H_2O(l)
+    \\]
+    \\[
+    CO_2(g)+Ca(OH)_2(aq)\\rightarrow CaCO_3(s)+H_2O(l)
+    \\]
+    \\[
+    Pb^{2+}(aq)+2OH^-(aq)\\rightarrow Pb(OH)_2(s)
+    \\]
+    \\[
+    Pb(OH)_2(s)+2OH^-(aq)\\rightarrow [Pb(OH)_4]^{2-}(aq)
+    \\]
+    \\[
+    Pb^{2+}(aq)+SO_4^{2-}(aq)\\rightarrow PbSO_4(s)
+    \\]
+    \\[
+    Pb^{2+}(aq)+2Cl^-(aq)\\rightarrow PbCl_2(s)
+    \\]
+    \\[
+    Ba^{2+}(aq)+SO_4^{2-}(aq)\\rightarrow BaSO_4(s)
+    \\]
+    \\[
+    Ag^+(aq)+Cl^-(aq)\\rightarrow AgCl(s)
+    \\]
+  </div>
+
+  <h3>Question 3 Solution Guide</h3>
+
+  <table>
+    <tr><th>Diagram</th><th>Essential Labels</th></tr>
+    <tr><td>Titration setup</td><td>Burette, clamp, stand, acid A, conical flask, B, indicator, white tile.</td></tr>
+    <tr><td>Filtration setup</td><td>Funnel, filter paper, residue, filtrate, receiving beaker.</td></tr>
+    <tr><td>CO₂ test</td><td>Test tube with C + HNO₃, delivery tube, lime water, gas bubbles.</td></tr>
+    <tr><td>Burette reading</td><td>Meniscus bottom at 12.15 cm³; eye at same level.</td></tr>
+  </table>
+
+  <div class="grid">
+    <div class="check">
+      <h3>Accuracy Strategies</h3>
+      <ol>
+        <li>Read burette at eye level.</li>
+        <li>Record readings to 2 decimal places.</li>
+        <li>Do not average the rough titre.</li>
+        <li>Use only concordant titres.</li>
+        <li>Add acid dropwise near endpoint.</li>
+        <li>Swirl the flask continuously.</li>
+      </ol>
+    </div>
+
+    <div class="bad">
+      <h3>Errors to Avoid</h3>
+      <ol>
+        <li>Using wrong mole ratio.</li>
+        <li>Writing inference as observation.</li>
+        <li>Failing to warm gently where gas evolution is slow.</li>
+        <li>Using HCl before AgNO₃ chloride test.</li>
+        <li>Forgetting units in calculations.</li>
+        <li>Wrongly averaging rough titre.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Roles of Reagents</h3>
+
+  <table>
+    <tr><th>Reagent</th><th>Role</th></tr>
+    <tr><td>Phenolphthalein</td><td>Indicator for acid-base titration; pink in alkali, colourless in acid.</td></tr>
+    <tr><td>Methyl orange</td><td>Indicator; yellow in alkali, red in acid, orange at endpoint.</td></tr>
+    <tr><td>Iodine solution</td><td>Tests starch; blue-black colour.</td></tr>
+    <tr><td>Lime water</td><td>Confirms CO₂; turns milky.</td></tr>
+    <tr><td>NaOH</td><td>Tests cations; Pb²⁺ gives white precipitate soluble in excess.</td></tr>
+    <tr><td>NH₃</td><td>Tests cations; Pb²⁺ white precipitate insoluble in excess.</td></tr>
+    <tr><td>H₂SO₄</td><td>Confirms Pb²⁺ by white PbSO₄.</td></tr>
+    <tr><td>HCl</td><td>Confirms Pb²⁺ by white PbCl₂.</td></tr>
+    <tr><td>BaCl₂</td><td>Tests sulphate; white BaSO₄ insoluble in dilute HNO₃.</td></tr>
+    <tr><td>AgNO₃</td><td>Tests chloride; white AgCl precipitate.</td></tr>
+    <tr><td>HNO₃</td><td>Dissolves carbonate and prepares solution for reliable precipitation tests.</td></tr>
+  </table>
+
+  <div class="danger">
+    <strong>Final WAEC secret:</strong> Observation is what happens. Inference is what it means.
+    Example: “Lime water turns milky” is observation; “CO₂ is present” is inference.
+  </div>
+</section>
+
+<section>
+  <h2>Round Summary of Key Facts</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Titration</h3>
+      <p>\\(H_2SO_4:NaOH = 1:2\\). Expected titre for 25.0 cm³ B is about 12.1 cm³.</p>
+    </div>
+
+    <div class="card">
+      <h3>Endpoint</h3>
+      <p>Phenolphthalein: pink to colourless. Methyl orange: yellow to orange/pink.</p>
+    </div>
+
+    <div class="card">
+      <h3>Carbonate</h3>
+      <p>Acid gives effervescence. CO₂ turns lime water milky.</p>
+    </div>
+
+    <div class="card">
+      <h3>Starch</h3>
+      <p>Iodine solution gives blue-black colouration.</p>
+    </div>
+
+    <div class="card">
+      <h3>Pb²⁺</h3>
+      <p>White ppt with NaOH, soluble in excess NaOH; white ppt with NH₃, insoluble in excess.</p>
+    </div>
+
+    <div class="card">
+      <h3>Confirm Pb²⁺</h3>
+      <p>White PbSO₄ with H₂SO₄ or white PbCl₂ with HCl.</p>
+    </div>
+
+    <div class="card">
+      <h3>BaCl₂</h3>
+      <p>Checks sulphate. Positive result is white BaSO₄ insoluble in dilute HNO₃.</p>
+    </div>
+
+    <div class="card">
+      <h3>AgNO₃</h3>
+      <p>Checks chloride. Positive result is white AgCl precipitate.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>CHIATECH WAEC Chemistry Practical Final Model — Test 12</p>
+  <p>Learn · Know · Do · Create SUCCESS</p>
+</footer>
+  `;
+
+  injectTest12Styles();
+  loadMathJax();
+});
+
+function toggleBlock(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  el.style.display = el.style.display === "block" ? "none" : "block";
+
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise();
+  }
+}
+
+function injectTest12Styles() {
+  const style = document.createElement("style");
+  style.textContent = `
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.75}
+header{background:linear-gradient(135deg,#042f2e,#0f766e,#14b8a6);color:white;text-align:center;padding:48px 18px}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
+header p{max-width:1120px;margin:14px auto 0;font-size:1.05rem}
+main{max-width:1260px;margin:auto;padding:24px 14px 85px}
+section{background:white;margin:22px 0;padding:24px;border-radius:22px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+h2{color:#0f766e;margin-top:0}
+h3{color:#1d4ed8;margin-top:28px}
+h4{color:#0f172a;margin-bottom:6px}
+button{border:0;background:#0f766e;color:white;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;margin:8px 6px 8px 0}
+button:hover{background:#115e59}
+.blue{background:#1d4ed8}.blue:hover{background:#1e40af}
+.gold{background:#b45309}.gold:hover{background:#92400e}
+.red{background:#b91c1c}.red:hover{background:#991b1b}
+.hidden{display:none}
+.note{background:#ecfdf5;border-left:5px solid #10b981;padding:14px;border-radius:12px;margin:14px 0}
+.warn{background:#fff7ed;border-left:5px solid #f97316;padding:14px;border-radius:12px;margin:14px 0}
+.danger{background:#fef2f2;border-left:5px solid #dc2626;padding:14px;border-radius:12px;margin:14px 0}
+.talk{background:#f8fafc;border-left:5px solid #6366f1;padding:14px;border-radius:12px;margin:14px 0}
+.formula{background:#eff6ff;border-left:5px solid #2563eb;padding:14px;border-radius:12px;margin:14px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:white}
+th,td{border:1px solid #cbd5e1;padding:10px;vertical-align:top}
+th{background:#0f766e;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #dbeafe;border-radius:18px;padding:18px}
+.lab{background:linear-gradient(#ecfeff,#f8fafc);border:1px solid #bfdbfe;border-radius:18px;padding:16px;text-align:center}
+.lab svg{width:100%;height:210px}
+.diagram{border:2px dashed #94a3b8;background:#f8fafc;padding:18px;border-radius:16px;text-align:center;color:#475569;font-weight:700;margin:16px 0}
+.check{background:#f0fdf4;border:1px solid #86efac;border-radius:14px;padding:14px}
+.bad{background:#fff1f2;border:1px solid #fecdd3;border-radius:14px;padding:14px}
+footer{background:#020617;color:white;padding:25px;text-align:center}
+@media print{button{display:none}section{box-shadow:none;break-inside:avoid}body{background:white}}
+  `;
+  document.head.appendChild(style);
+}
+
+function loadMathJax() {
+  window.MathJax = {
+    tex: { inlineMath: [["\\\\(", "\\\\)"], ["$", "$"]] },
+    svg: { fontCache: "global" }
+  };
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+  script.defer = true;
+  document.head.appendChild(script);
+}

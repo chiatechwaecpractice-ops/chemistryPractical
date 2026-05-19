@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WAEC Chemistry Practical Test 7 — Alternative Version</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.7}
+header{background:linear-gradient(135deg,#022c22,#0f766e,#14b8a6);color:white;text-align:center;padding:42px 18px}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.6rem)}
+header p{max-width:950px;margin:14px auto 0}
+main{max-width:1150px;margin:auto;padding:24px 14px 70px}
+section{background:white;margin:22px 0;padding:24px;border-radius:20px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+h2{color:#0f766e;margin-top:0}
+h3{color:#1d4ed8;margin-top:28px}
+h4{margin-bottom:6px}
+button{border:0;background:#0f766e;color:white;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;margin:8px 6px 8px 0}
+button:hover{background:#115e59}
+.blue{background:#1d4ed8}
+.blue:hover{background:#1e40af}
+.hidden{display:none}
+.note{background:#ecfdf5;border-left:5px solid #10b981;padding:14px;border-radius:12px;margin:14px 0}
+.warn{background:#fff7ed;border-left:5px solid #f97316;padding:14px;border-radius:12px;margin:14px 0}
+.formula{background:#eff6ff;border-left:5px solid #2563eb;padding:14px;border-radius:12px;margin:14px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:white}
+th,td{border:1px solid #cbd5e1;padding:10px;vertical-align:top}
+th{background:#0f766e;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #dbeafe;border-radius:18px;padding:18px}
+.diagram{border:2px dashed #94a3b8;background:#f8fafc;padding:18px;border-radius:16px;text-align:center;color:#475569;font-weight:700;margin:16px 0}
+footer{background:#020617;color:white;padding:25px;text-align:center}
+@media print{button{display:none}section{box-shadow:none;break-inside:avoid}body{background:white}}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>WAEC Chemistry Practical — Test 6B</h1>
+  <p>
+    Alternative school-practice version using the same reagents:
+    H₂SO₄, NaOH, lead(II) carbonate and starch.
+  </p>
+</header>
+
+<main>
+
+<section>
+  <h2>Candidate’s Instruction</h2>
+  <p>
+    Answer all questions. Record all observations accurately and give inferences only
+    after stating the observation. Show all calculation steps clearly.
+  </p>
+
+  <div class="note">
+    <strong>Reagents:</strong><br>
+    A = dilute tetraoxosulphate(VI) acid, H₂SO₄<br>
+    B = sodium hydroxide solution containing 4.0 g dm⁻³ NaOH<br>
+    C = mixture of lead(II) carbonate and starch
+  </div>
+</section>
+
+<section>
+  <h2>Enter Class: Question Paper</h2>
+  <button onclick="toggleBlock('paper')">ENTER CLASS</button>
+
+  <div id="paper" class="hidden">
+
+    <h3>Question 1 — Quantitative Analysis</h3>
+    <p>
+      A is dilute H₂SO₄. B is NaOH solution containing 4.0 g of NaOH per dm³.
+    </p>
+
+    <p>
+      Put A into the burette. Pipette <strong>20.0 cm³</strong> of B into a conical flask.
+      Add two drops of phenolphthalein and titrate with A until the pink colour just disappears.
+      Repeat to obtain concordant titres.
+    </p>
+
+    <ol>
+      <li>Tabulate your burette readings.</li>
+      <li>Calculate the average volume of A used.</li>
+      <li>Calculate the concentration of B in mol dm⁻³.</li>
+      <li>Calculate the concentration of A in mol dm⁻³.</li>
+      <li>Calculate the number of moles of H⁺ ions in the average titre of A.</li>
+    </ol>
+
+    <div class="formula">
+      \[
+      H_2SO_4(aq)+2NaOH(aq)\rightarrow Na_2SO_4(aq)+2H_2O(l)
+      \]
+    </div>
+
+    <p>[H = 1, O = 16, S = 32, Na = 23]</p>
+
+    <div class="diagram">
+      <img src="../assets/diagrams/titration-setup-labelled.PNG" alt="Labelled titration setup" style="width:100%;max-height:360px;object-fit:contain;background:white;border-radius:12px">
+      <p>Label the burette, retort stand, clamp, conical flask, white tile and indicator.</p>
+    </div>
+
+    <h3>Question 2 — Qualitative Analysis</h3>
+    <p>
+      C is a mixture of lead(II) carbonate and starch. Carry out the following tests.
+      Record your observations and state the conclusions drawn.
+    </p>
+
+    <ol>
+      <li>Add distilled water to C, shake well and filter. Keep the residue.</li>
+      <li>Add iodine solution to a small portion of the residue.</li>
+      <li>Add dilute HNO₃ to another portion of the residue and warm gently.</li>
+      <li>Pass any gas evolved into lime water.</li>
+      <li>Divide the acid solution obtained into three portions.</li>
+      <li>To the first portion, add NaOH(aq) in drops and then in excess.</li>
+      <li>To the second portion, add NH₃(aq) in drops and then in excess.</li>
+      <li>To the third portion, add KI(aq), then warm gently.</li>
+    </ol>
+
+    <h3>Question 3 — Practical Knowledge</h3>
+    <ol>
+      <li>Why is phenolphthalein colourless at the end point in this titration?</li>
+      <li>Why should the pipette be rinsed with B before use?</li>
+      <li>State one chemical test for starch.</li>
+      <li>State one confirmatory test for Pb²⁺.</li>
+      <li>What observation confirms CO₂?</li>
+      <li>Why should lead compounds not be disposed carelessly into the environment?</li>
+    </ol>
+
+    <button class="blue" onclick="toggleBlock('solution')">VIEW BEST REPORT / SOLUTION</button>
+  </div>
+</section>
+
+<section id="solution" class="hidden">
+  <h2>Best WAEC-Style Marking Scheme Solution</h2>
+
+  <h3>Question 1 Solution</h3>
+
+  <table>
+    <tr>
+      <th>Titration</th>
+      <th>Rough</th>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>3rd</th>
+    </tr>
+    <tr>
+      <td>Final reading / cm³</td>
+      <td>10.05</td>
+      <td>9.75</td>
+      <td>9.80</td>
+      <td>9.75</td>
+    </tr>
+    <tr>
+      <td>Initial reading / cm³</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Volume of A used / cm³</td>
+      <td>10.05</td>
+      <td>9.75</td>
+      <td>9.80</td>
+      <td>9.75</td>
+    </tr>
+  </table>
+
+  <div class="formula">
+    \[
+    Average\ titre=\frac{9.75+9.80+9.75}{3}=9.77cm^3
+    \]
+  </div>
+
+  <h4>Concentration of B</h4>
+  <div class="formula">
+    \[
+    Molar\ mass\ of\ NaOH=23+16+1=40g mol^{-1}
+    \]
+    \[
+    C_B=\frac{4.0}{40}=0.100mol\,dm^{-3}
+    \]
+  </div>
+
+  <h4>Concentration of A</h4>
+  <div class="formula">
+    \[
+    H_2SO_4:NaOH=1:2
+    \]
+    \[
+    \frac{C_A V_A}{C_B V_B}=\frac{1}{2}
+    \]
+    \[
+    \frac{C_A\times9.77}{0.100\times20.0}=\frac{1}{2}
+    \]
+    \[
+    C_A=\frac{0.100\times20.0}{2\times9.77}=0.102mol\,dm^{-3}
+    \]
+  </div>
+
+  <h4>Moles of H⁺ ions in average titre</h4>
+  <p>
+    Since 1 mole of H₂SO₄ gives 2 moles of H⁺:
+  </p>
+
+  <div class="formula">
+    \[
+    n(H_2SO_4)=\frac{0.102\times9.77}{1000}=9.97\times10^{-4}mol
+    \]
+    \[
+    n(H^+)=2\times9.97\times10^{-4}
+    =1.99\times10^{-3}mol
+    \]
+  </div>
+
+  <div class="note">
+    The titre is realistic because 20.0 cm³ of 0.100 mol dm⁻³ NaOH requires about
+    10.0 cm³ of approximately 0.100 mol dm⁻³ H₂SO₄ due to the 1:2 mole ratio.
+  </div>
+
+  <h3>Question 2 Solution</h3>
+
+  <table>
+    <tr>
+      <th>Test</th>
+      <th>Observation</th>
+      <th>Inference</th>
+    </tr>
+    <tr>
+      <td>C + distilled water, shake and filter</td>
+      <td>White suspension formed; solid remains as residue.</td>
+      <td>C contains insoluble substances.</td>
+    </tr>
+    <tr>
+      <td>Residue + iodine solution</td>
+      <td>Blue-black colouration formed.</td>
+      <td>Starch is present.</td>
+    </tr>
+    <tr>
+      <td>Residue + dilute HNO₃ and warm</td>
+      <td>Effervescence; colourless odourless gas evolved.</td>
+      <td>Carbonate suspected.</td>
+    </tr>
+    <tr>
+      <td>Gas + lime water</td>
+      <td>Lime water turns milky.</td>
+      <td>CO₂ confirmed; CO₃²⁻ present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NaOH in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Zn²⁺ or Al³⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NaOH</td>
+      <td>White precipitate dissolves.</td>
+      <td>Amphoteric ion present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NH₃ in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Al³⁺ or Zn²⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NH₃</td>
+      <td>White precipitate remains insoluble.</td>
+      <td>Pb²⁺ indicated.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + KI(aq), warm</td>
+      <td>Yellow precipitate formed; dissolves on heating and recrystallizes as golden-yellow crystals on cooling.</td>
+      <td>Pb²⁺ confirmed as PbI₂.</td>
+    </tr>
+  </table>
+
+  <h3>Equations</h3>
+
+  <div class="formula">
+    \[
+    PbCO_3(s)+2HNO_3(aq)\rightarrow Pb(NO_3)_2(aq)+CO_2(g)+H_2O(l)
+    \]
+  </div>
+
+  <div class="formula">
+    \[
+    CO_2(g)+Ca(OH)_2(aq)\rightarrow CaCO_3(s)+H_2O(l)
+    \]
+  </div>
+
+  <div class="formula">
+    \[
+    Pb^{2+}(aq)+2OH^-(aq)\rightarrow Pb(OH)_2(s)
+    \]
+    \[
+    Pb(OH)_2(s)+2OH^-(aq)\rightarrow [Pb(OH)_4]^{2-}(aq)
+    \]
+  </div>
+
+  <div class="formula">
+    \[
+    Pb^{2+}(aq)+2I^-(aq)\rightarrow PbI_2(s)
+    \]
+  </div>
+
+  <h3>Question 3 Solution</h3>
+
+  <div class="grid">
+    <div class="card">
+      <img src="../assets/diagrams/titration-setup-labelled.PNG" alt="Labelled titration setup" style="width:100%;height:240px;object-fit:contain;background:white;border-radius:12px">
+      <h3>Titration Setup</h3>
+      <p><strong>Teacher:</strong> The white tile makes the endpoint easier to see during titration.</p>
+    </div>
+    <div class="card">
+      <img src="../assets/diagrams/pb2-cation-test-flow.PNG" alt="Lead ion test flow" style="width:100%;height:240px;object-fit:contain;background:white;border-radius:12px">
+      <h3>Pb2+ Confirmation</h3>
+      <p><strong>Teacher:</strong> Use the flowchart to connect white precipitates with lead(II) ion confirmation.</p>
+    </div>
+  </div>
+
+  <ol>
+    <li>Phenolphthalein becomes colourless when the alkali has been neutralized by acid.</li>
+    <li>The pipette is rinsed with B to avoid dilution and contamination of the measured NaOH.</li>
+    <li>Add iodine solution; blue-black colour confirms starch.</li>
+    <li>Add KI; yellow PbI₂ precipitate confirms Pb²⁺. Dilute H₂SO₄ also gives white PbSO₄.</li>
+    <li>CO₂ turns lime water milky.</li>
+    <li>Lead compounds are poisonous and can pollute soil and water.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Exam-Ready Takeaway</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Best Titre Skill</h3>
+      <p>Use only concordant titres for average. Ignore rough titre.</p>
+    </div>
+
+    <div class="card">
+      <h3>Best Qualitative Skill</h3>
+      <p>Write observation before inference.</p>
+    </div>
+
+    <div class="card">
+      <h3>Pb²⁺ Confirmation</h3>
+      <p>Yellow PbI₂ with KI or white PbSO₄ with dilute H₂SO₄.</p>
+    </div>
+
+    <div class="card">
+      <h3>Starch</h3>
+      <p>Iodine solution gives blue-black colouration.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>CHIATECH WAEC Chemistry Practical Practice Portal</p>
+  <p>Learn · Know · Do · Create SUCCESS</p>
+</footer>
+
+<script>
+function toggleBlock(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.style.display = el.style.display === "block" ? "none" : "block";
+  if(window.MathJax && window.MathJax.typesetPromise){
+    window.MathJax.typesetPromise();
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+// test11.js
+// WAEC Chemistry Practical — Test 11
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.title = "WAEC Chemistry Practical Test 11";
+
+  document.body.innerHTML = `
+<header>
+  <h1>WAEC Chemistry Practical — Test 11</h1>
+  <p>
+    Modelled practical question set using the supplied reagents only:
+    H₂SO₄, NaOH, lead(II) carbonate, starch, iodine solution, HCl, HNO₃,
+    AgNO₃, BaCl₂, NH₃, lime water, litmus papers, methyl orange and phenolphthalein.
+  </p>
+</header>
+
+<main>
+
+<section>
+  <h2>Laboratory Reagent View</h2>
+
+  <div class="grid">
+    <div class="lab">
+      <h3>A: H₂SO₄</h3>
+      <svg viewBox="0 0 300 220">
+        <rect x="105" y="45" width="90" height="140" rx="12" fill="#dbeafe" stroke="#1e40af" stroke-width="4"/>
+        <rect x="125" y="20" width="50" height="35" rx="8" fill="#bfdbfe" stroke="#1e40af" stroke-width="4"/>
+        <rect x="112" y="95" width="76" height="75" fill="#60a5fa" opacity=".55"/>
+        <text x="150" y="135" text-anchor="middle" font-size="22" fill="#0f172a">A</text>
+        <text x="150" y="160" text-anchor="middle" font-size="18" fill="#0f172a">H₂SO₄</text>
+      </svg>
+      <p>Dilute tetraoxosulphate(VI) acid for titration and Pb²⁺ confirmation.</p>
+    </div>
+
+    <div class="lab">
+      <h3>B: NaOH</h3>
+      <svg viewBox="0 0 300 220">
+        <rect x="105" y="45" width="90" height="140" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="4"/>
+        <rect x="125" y="20" width="50" height="35" rx="8" fill="#bbf7d0" stroke="#15803d" stroke-width="4"/>
+        <rect x="112" y="92" width="76" height="78" fill="#22c55e" opacity=".45"/>
+        <text x="150" y="135" text-anchor="middle" font-size="22" fill="#0f172a">B</text>
+        <text x="150" y="160" text-anchor="middle" font-size="18" fill="#0f172a">NaOH</text>
+      </svg>
+      <p>4.0 g dm⁻³ sodium hydroxide solution.</p>
+    </div>
+
+    <div class="lab">
+      <h3>C: PbCO₃ + Starch</h3>
+      <svg viewBox="0 0 300 220">
+        <ellipse cx="150" cy="165" rx="85" ry="24" fill="#cbd5e1"/>
+        <rect x="75" y="55" width="150" height="110" rx="15" fill="#f8fafc" stroke="#64748b" stroke-width="4"/>
+        <circle cx="115" cy="115" r="9" fill="#e5e7eb"/>
+        <circle cx="155" cy="100" r="10" fill="#f1f5f9"/>
+        <circle cx="185" cy="128" r="8" fill="#e2e8f0"/>
+        <text x="150" y="160" text-anchor="middle" font-size="17" fill="#0f172a">PbCO₃ + Starch</text>
+      </svg>
+      <p>White 1:1 solid mixture for qualitative analysis.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Teacher–Student Class: Understand Before You Attempt</h2>
+  <button onclick="toggleBlock('classroom')">ENTER CLASS</button>
+
+  <div id="classroom" class="hidden">
+
+    <div class="talk">
+      <strong>Teacher:</strong> In this test, WAEC can combine titration, salt analysis and practical theory.
+      The safest path is: calculate accurately, observe carefully, and never write inference before observation.
+    </div>
+
+    <div class="talk">
+      <strong>Student:</strong> Sir, why is the titre around 12 cm³ when 25 cm³ of NaOH is used?
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> Because \\(H_2SO_4\\) is dibasic. One mole of acid neutralizes two moles of NaOH.
+    </div>
+
+    <div class="formula">
+      \\[
+      H_2SO_4(aq)+2NaOH(aq)\\rightarrow Na_2SO_4(aq)+2H_2O(l)
+      \\]
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> C contains lead(II) carbonate and starch. Water will not dissolve them properly.
+      Iodine reveals starch; dilute nitric acid releases carbon dioxide from carbonate and converts lead carbonate
+      into soluble lead(II) nitrate.
+    </div>
+
+    <div class="formula">
+      \\[
+      PbCO_3(s)+2HNO_3(aq)\\rightarrow Pb(NO_3)_2(aq)+CO_2(g)+H_2O(l)
+      \\]
+    </div>
+
+    <div class="talk">
+      <strong>Student:</strong> What should I write when gas is evolved?
+    </div>
+
+    <div class="talk">
+      <strong>Teacher:</strong> Write the observation fully: “Effervescence; colourless odourless gas evolved;
+      gas turns lime water milky.” Then infer \\(CO_2\\) from \\(CO_3^{2-}\\).
+    </div>
+
+    <div class="grid">
+      <div class="diagram">
+        Draw: titration setup with burette, clamp, conical flask, white tile and indicator.
+      </div>
+      <div class="diagram">
+        Draw: filtration setup showing filter paper, residue and filtrate.
+      </div>
+      <div class="diagram">
+        Draw: CO₂ gas test setup with delivery tube into lime water.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Enter Test 11 Question Paper</h2>
+  <button class="gold" onclick="toggleBlock('paper')">OPEN TEST 11</button>
+
+  <div id="paper" class="hidden">
+
+    <h3>Question 1 — Quantitative Analysis</h3>
+
+    <p>
+      A is dilute \\(H_2SO_4\\). B is NaOH solution containing \\(4.0g\\) of NaOH per \\(dm^3\\).
+    </p>
+
+    <p>
+      Put A into the burette. Pipette \\(25.0cm^3\\) of B into a conical flask.
+      Add 2 drops of phenolphthalein and titrate with A until the pink colour just disappears.
+      Repeat the titration to obtain concordant titre values.
+    </p>
+
+    <ol>
+      <li>Tabulate your readings.</li>
+      <li>Calculate the average volume of A used.</li>
+      <li>Calculate the concentration of B in \\(mol\\,dm^{-3}\\).</li>
+      <li>Calculate the concentration of A in \\(mol\\,dm^{-3}\\).</li>
+      <li>Calculate the mass concentration of A in \\(g\\,dm^{-3}\\).</li>
+      <li>Calculate the number of moles of \\(H^+\\) in the average titre.</li>
+    </ol>
+
+    <div class="formula">
+      \\[
+      H_2SO_4(aq)+2NaOH(aq)\\rightarrow Na_2SO_4(aq)+2H_2O(l)
+      \\]
+    </div>
+
+    <p>[H = 1, O = 16, S = 32, Na = 23]</p>
+
+    <h3>Question 2 — Qualitative Analysis</h3>
+
+    <p>
+      C is a mixture of lead(II) carbonate and starch. Carry out the following tests.
+      Record your observations and state your inferences.
+    </p>
+
+    <ol>
+      <li>Add distilled water to C and shake. Test with red and blue litmus papers.</li>
+      <li>Filter the mixture. Keep the residue and filtrate.</li>
+      <li>Add iodine solution to a small portion of the residue.</li>
+      <li>Add dilute \\(HNO_3\\) to another portion of the residue and warm gently.</li>
+      <li>Pass any gas evolved into lime water.</li>
+      <li>Divide the resulting acid solution into six portions.</li>
+      <li>To the first portion, add NaOH(aq) in drops and then in excess.</li>
+      <li>To the second portion, add NH₃(aq) in drops and then in excess.</li>
+      <li>To the third portion, add dilute H₂SO₄(aq).</li>
+      <li>To the fourth portion, add dilute HCl(aq).</li>
+      <li>To the fifth portion, add BaCl₂(aq), then excess dilute HNO₃.</li>
+      <li>To the sixth portion, add AgNO₃(aq), then excess dilute HNO₃.</li>
+    </ol>
+
+    <h3>Question 3 — Practical Knowledge and Diagram Tasks</h3>
+
+    <ol>
+      <li>Draw and label a complete titration setup.</li>
+      <li>Draw and label a filtration setup.</li>
+      <li>Draw and label a gas-test setup for passing CO₂ into lime water.</li>
+      <li>Draw a burette meniscus showing \\(12.10cm^3\\).</li>
+      <li>State the colour of phenolphthalein in acid and alkali.</li>
+      <li>State the colour of methyl orange in acid and alkali.</li>
+      <li>Why is dilute HNO₃ used before AgNO₃ or BaCl₂ tests?</li>
+      <li>State the test for starch.</li>
+      <li>State the confirmatory test for carbonate.</li>
+      <li>Give two tests that support the presence of \\(Pb^{2+}\\).</li>
+      <li>Why are lead(II) compounds handled with care?</li>
+    </ol>
+
+    <button class="blue" onclick="toggleBlock('solution')">VIEW FULL WAEC MARKING SCHEME</button>
+  </div>
+</section>
+
+<section id="solution" class="hidden">
+  <h2>Full WAEC Marking Scheme and Teaching Solution</h2>
+
+  <h3>Question 1 Solution</h3>
+
+  <table>
+    <tr>
+      <th>Titration</th>
+      <th>Rough</th>
+      <th>1st</th>
+      <th>2nd</th>
+      <th>3rd</th>
+    </tr>
+    <tr>
+      <td>Final burette reading / cm³</td>
+      <td>12.40</td>
+      <td>12.15</td>
+      <td>12.10</td>
+      <td>12.15</td>
+    </tr>
+    <tr>
+      <td>Initial burette reading / cm³</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>Volume of A used / cm³</td>
+      <td>12.40</td>
+      <td>12.15</td>
+      <td>12.10</td>
+      <td>12.15</td>
+    </tr>
+  </table>
+
+  <div class="formula">
+    \\[
+    Average\\ titre=\\frac{12.15+12.10+12.15}{3}=12.13cm^3
+    \\]
+  </div>
+
+  <h4>Concentration of B</h4>
+  <div class="formula">
+    \\[
+    Molar\\ mass\\ of\\ NaOH=23+16+1=40g\\,mol^{-1}
+    \\]
+    \\[
+    C_B=\\frac{4.0}{40}=0.100mol\\,dm^{-3}
+    \\]
+  </div>
+
+  <h4>Concentration of A</h4>
+  <div class="formula">
+    \\[
+    H_2SO_4:NaOH=1:2
+    \\]
+    \\[
+    \\frac{C_A V_A}{C_B V_B}=\\frac{1}{2}
+    \\]
+    \\[
+    \\frac{C_A\\times12.13}{0.100\\times25.0}=\\frac{1}{2}
+    \\]
+    \\[
+    C_A=\\frac{0.100\\times25.0}{2\\times12.13}=0.103mol\\,dm^{-3}
+    \\]
+  </div>
+
+  <h4>Mass concentration of A</h4>
+  <div class="formula">
+    \\[
+    Molar\\ mass\\ of\\ H_2SO_4=98g\\,mol^{-1}
+    \\]
+    \\[
+    Mass\\ concentration=0.103\\times98=10.1g\\,dm^{-3}
+    \\]
+  </div>
+
+  <h4>Moles of \\(H^+\\)</h4>
+  <div class="formula">
+    \\[
+    n(H_2SO_4)=\\frac{0.103\\times12.13}{1000}=1.25\\times10^{-3}mol
+    \\]
+    \\[
+    n(H^+)=2(1.25\\times10^{-3})=2.50\\times10^{-3}mol
+    \\]
+  </div>
+
+  <h3>Question 2 Solution</h3>
+
+  <table>
+    <tr><th>Test</th><th>Observation</th><th>Inference</th></tr>
+    <tr>
+      <td>C + water + litmus</td>
+      <td>White suspension; no change on red or blue litmus.</td>
+      <td>Insoluble neutral/near-neutral mixture.</td>
+    </tr>
+    <tr>
+      <td>Filtration</td>
+      <td>Colourless filtrate and white residue.</td>
+      <td>Insoluble component present.</td>
+    </tr>
+    <tr>
+      <td>Residue + iodine</td>
+      <td>Blue-black colouration.</td>
+      <td>Starch present.</td>
+    </tr>
+    <tr>
+      <td>Residue + dilute HNO₃ + warm</td>
+      <td>Effervescence; colourless odourless gas evolved.</td>
+      <td>Carbonate suspected; CO₂ evolved.</td>
+    </tr>
+    <tr>
+      <td>Gas + lime water</td>
+      <td>Lime water turns milky.</td>
+      <td>CO₂ confirmed; CO₃²⁻ present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NaOH in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Al³⁺ or Zn²⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NaOH</td>
+      <td>White precipitate dissolves.</td>
+      <td>Amphoteric ion present.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + NH₃ in drops</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺, Al³⁺ or Zn²⁺ may be present.</td>
+    </tr>
+    <tr>
+      <td>Then excess NH₃</td>
+      <td>White precipitate remains insoluble.</td>
+      <td>Pb²⁺ indicated.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + dilute H₂SO₄</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺ confirmed as PbSO₄.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + dilute HCl</td>
+      <td>White precipitate formed.</td>
+      <td>Pb²⁺ confirmed as PbCl₂.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + BaCl₂ + dilute HNO₃</td>
+      <td>No white precipitate.</td>
+      <td>SO₄²⁻ absent.</td>
+    </tr>
+    <tr>
+      <td>Acid solution + AgNO₃ + dilute HNO₃</td>
+      <td>No white precipitate.</td>
+      <td>Cl⁻ absent.</td>
+    </tr>
+  </table>
+
+  <h3>Equations</h3>
+
+  <div class="formula">
+    \\[
+    PbCO_3+2HNO_3\\rightarrow Pb(NO_3)_2+CO_2+H_2O
+    \\]
+    \\[
+    CO_2+Ca(OH)_2\\rightarrow CaCO_3+H_2O
+    \\]
+    \\[
+    Pb^{2+}+2OH^-\\rightarrow Pb(OH)_2
+    \\]
+    \\[
+    Pb(OH)_2+2OH^-\\rightarrow [Pb(OH)_4]^{2-}
+    \\]
+    \\[
+    Pb^{2+}+SO_4^{2-}\\rightarrow PbSO_4
+    \\]
+    \\[
+    Pb^{2+}+2Cl^-\\rightarrow PbCl_2
+    \\]
+  </div>
+
+  <h3>Question 3 Solution Guide</h3>
+
+  <table>
+    <tr><th>Diagram</th><th>Labels Required</th></tr>
+    <tr><td>Titration setup</td><td>Burette, clamp, stand, conical flask, white tile, acid A, alkali B, indicator.</td></tr>
+    <tr><td>Filtration setup</td><td>Filter funnel, filter paper, residue, filtrate, beaker/conical flask.</td></tr>
+    <tr><td>CO₂ test setup</td><td>Reaction tube, delivery tube, lime water, bubbles, gas path.</td></tr>
+    <tr><td>Burette reading</td><td>Eye level, meniscus bottom, 12.10 cm³ marking, no parallax.</td></tr>
+  </table>
+
+  <ol>
+    <li>Phenolphthalein: colourless in acid, pink in alkali.</li>
+    <li>Methyl orange: red in acid, yellow in alkali, orange at end point.</li>
+    <li>Dilute HNO₃ is preferred because it does not introduce Cl⁻ or SO₄²⁻.</li>
+    <li>Starch: iodine gives blue-black colour.</li>
+    <li>Carbonate: acid gives CO₂; CO₂ turns lime water milky.</li>
+    <li>Pb²⁺: white PbSO₄ with H₂SO₄; white PbCl₂ with HCl; Pb(OH)₂ dissolves in excess NaOH but not excess NH₃.</li>
+    <li>Lead compounds are toxic and must not be touched, inhaled or disposed carelessly.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Useful Video Search Links</h2>
+  <div class="grid video">
+    <div class="card"><a target="_blank" href="https://www.youtube.com/results?search_query=WAEC+chemistry+practical+H2SO4+NaOH+titration">H₂SO₄ and NaOH Titration</a></div>
+    <div class="card"><a target="_blank" href="https://www.youtube.com/results?search_query=WAEC+qualitative+analysis+lead+carbonate+starch">Lead Carbonate and Starch Qualitative Analysis</a></div>
+    <div class="card"><a target="_blank" href="https://www.youtube.com/results?search_query=test+for+carbon+dioxide+lime+water+chemistry+practical">CO₂ Lime Water Test</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>CHIATECH WAEC Chemistry Practical Practice Portal</p>
+  <p>Learn · Know · Do · Create SUCCESS</p>
+</footer>
+  `;
+
+  injectTest11Styles();
+  loadMathJax();
+});
+
+function toggleBlock(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  el.style.display = el.style.display === "block" ? "none" : "block";
+
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    window.MathJax.typesetPromise();
+  }
+}
+
+function injectTest11Styles() {
+  const style = document.createElement("style");
+  style.textContent = `
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.75}
+header{background:linear-gradient(135deg,#022c22,#0f766e,#14b8a6);color:white;text-align:center;padding:48px 18px}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.8rem)}
+header p{max-width:1100px;margin:14px auto 0;font-size:1.05rem}
+main{max-width:1250px;margin:auto;padding:24px 14px 80px}
+section{background:white;margin:22px 0;padding:24px;border-radius:22px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+h2{color:#0f766e;margin-top:0}
+h3{color:#1d4ed8;margin-top:28px}
+h4{color:#0f172a;margin-bottom:6px}
+button{border:0;background:#0f766e;color:white;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;margin:8px 6px 8px 0}
+button:hover{background:#115e59}
+.blue{background:#1d4ed8}
+.blue:hover{background:#1e40af}
+.gold{background:#b45309}
+.gold:hover{background:#92400e}
+.hidden{display:none}
+.note{background:#ecfdf5;border-left:5px solid #10b981;padding:14px;border-radius:12px;margin:14px 0}
+.warn{background:#fff7ed;border-left:5px solid #f97316;padding:14px;border-radius:12px;margin:14px 0}
+.danger{background:#fef2f2;border-left:5px solid #dc2626;padding:14px;border-radius:12px;margin:14px 0}
+.talk{background:#f8fafc;border-left:5px solid #6366f1;padding:14px;border-radius:12px;margin:14px 0}
+.formula{background:#eff6ff;border-left:5px solid #2563eb;padding:14px;border-radius:12px;margin:14px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:white}
+th,td{border:1px solid #cbd5e1;padding:10px;vertical-align:top}
+th{background:#0f766e;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #dbeafe;border-radius:18px;padding:18px}
+.lab{background:linear-gradient(#e0f2fe,#f8fafc);border:1px solid #bfdbfe;border-radius:18px;padding:14px;text-align:center}
+.lab svg{width:100%;height:220px}
+.diagram{border:2px dashed #94a3b8;background:#f8fafc;padding:18px;border-radius:16px;text-align:center;color:#475569;font-weight:700;margin:16px 0}
+.video a{color:#1d4ed8;font-weight:700}
+footer{background:#020617;color:white;padding:25px;text-align:center}
+@media print{button{display:none}section{box-shadow:none;break-inside:avoid}body{background:white}}
+  `;
+  document.head.appendChild(style);
+}
+
+function loadMathJax() {
+  window.MathJax = {
+    tex: { inlineMath: [["\\\\(", "\\\\)"], ["$", "$"]] },
+    svg: { fontCache: "global" }
+  };
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js";
+  script.defer = true;
+  document.head.appendChild(script);
+}

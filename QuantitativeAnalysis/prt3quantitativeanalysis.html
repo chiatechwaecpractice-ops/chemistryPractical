@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Part 3 Quantitative Analysis | WAEC Chemistry Practical</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#10233f;line-height:1.8}
+header{background:linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),url('../assets/diagrams/waecchemistrypractical.PNG');background-size:cover;background-position:center;color:white;text-align:center;padding:90px 20px}
+header h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:18px}
+header p{max-width:1150px;margin:auto;font-size:1.08rem}
+nav{background:#061225;padding:14px;position:sticky;top:0;z-index:1000}
+nav ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;list-style:none}
+nav a{color:white;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px}
+nav a:hover{background:#2563eb}
+main{max-width:1320px;margin:auto;padding:25px}
+section{background:white;margin-bottom:28px;padding:30px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+h2{color:#0b2d63;margin-bottom:16px;font-size:2rem}
+h3{color:#174ea6;margin:22px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px}
+.card{background:#f8fbff;border:1px solid #d6e4ff;border-radius:16px;padding:22px}
+.card img{width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:12px}
+.note{background:#dbeafe;border-left:8px solid #2563eb;padding:16px;border-radius:12px;margin:18px 0}
+.success{background:#dcfce7;border-left:8px solid #16a34a;padding:16px;border-radius:12px;margin:18px 0}
+.warning{background:#fee2e2;border-left:8px solid #dc2626;padding:16px;border-radius:12px;margin:18px 0}
+.gold{background:#fff7cc;border-left:8px solid #f59e0b;padding:16px;border-radius:12px;margin:18px 0}
+.lab{background:#f8fafc;border:1px solid #dbeafe;border-radius:18px;padding:24px;margin-top:18px}
+.formula{background:#eff6ff;border-left:6px solid #2563eb;border-radius:12px;padding:15px;margin:16px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:18px}
+th{background:#0b2d63;color:white;padding:13px}
+td{border:1px solid #cbd5e1;padding:12px;vertical-align:top}
+button{background:#0b2d63;color:white;border:none;padding:14px 24px;border-radius:12px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:18px}
+button:hover{background:#2563eb}
+.classroom{display:none;background:#f1f7ff;border:2px dashed #2563eb;padding:26px;border-radius:18px;margin-top:22px}
+.teacher{background:white;border-left:7px solid #2563eb;border-radius:10px;padding:18px;margin-bottom:16px}
+.student{background:#fffdf4;border-left:7px solid #f59e0b;border-radius:10px;padding:18px;margin-bottom:16px}
+.diagram{border:2px dashed #94a3b8;background:#f8fafc;border-radius:16px;padding:18px;text-align:center;font-weight:700;color:#475569;margin:16px 0}
+ul,ol{margin-left:22px}
+li{margin-bottom:9px}
+footer{background:#061225;color:white;text-align:center;padding:40px 20px;margin-top:40px}
+@media(max-width:768px){section{padding:20px}header{padding:70px 15px}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>QUANTITATIVE ANALYSIS — PART 3</h1>
+<p>
+Final WAEC quantitative analysis mastery class: full model practical papers,
+independent titration problem-solving, examiner-style marking schemes, advanced errors,
+graphical reasoning and real practical strategies for accurate values.
+</p>
+<div class="note">
+Part 3 turns students from learners into exam-ready practical candidates. It combines theory, laboratory procedure, accurate titre simulation and full WAEC marking style.
+</div>
+</header>
+
+<nav>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#model1">Model Paper 1</a></li>
+<li><a href="#model2">Model Paper 2</a></li>
+<li><a href="#hardcalc">Hard Calculations</a></li>
+<li><a href="#graph">Graph/Result Analysis</a></li>
+<li><a href="#errors">Exam Errors</a></li>
+<li><a href="#summary">Final Summary</a></li>
+</ul>
+</nav>
+
+<main>
+
+<section id="overview">
+<h2>1. Final Quantitative Analysis Mindset</h2>
+
+<p>
+At WAEC level, quantitative analysis is not only about titration. It is about proving that you can measure accurately, record neatly, calculate logically and explain the chemistry behind the values obtained.
+</p>
+
+<div class="grid">
+<div class="card">
+<img src="../assets/diagrams/titration-setup-labelled.PNG" alt="">
+<h3>Accurate Recording</h3>
+<p>Record initial and final burette readings to two decimal places. Use only concordant titres.</p>
+</div>
+
+<div class="card">
+<img src="../assets/diagrams/advanced-calculation.png" alt="">
+<h3>Mole Ratio First</h3>
+<p>Every titration calculation begins with the balanced equation and mole ratio.</p>
+</div>
+
+<div class="card">
+<img src="../assets/diagrams/percentage-purity.PNG" alt="">
+<h3>Examiner Style</h3>
+<p>WAEC rewards method, units, correct substitution, significant figures and final answer.</p>
+</div>
+</div>
+
+<div class="warning">
+FINAL WARNING: A correct numerical answer with no working may lose marks. WAEC practical chemistry rewards traceable calculation steps.
+</div>
+</section>
+
+<section id="model1">
+<h2>2. Model Paper 1 — Strong Acid vs Strong Alkali</h2>
+
+<div class="lab">
+<h3>Question</h3>
+<p>
+A is dilute tetraoxosulphate(VI) acid, \(H_2SO_4\). B is sodium hydroxide solution containing \(4.0g\,dm^{-3}\) of NaOH.
+\(25.0cm^3\) of B was titrated against A using phenolphthalein indicator.
+</p>
+
+<table>
+<tr><th>Titration</th><th>Rough</th><th>1st</th><th>2nd</th><th>3rd</th></tr>
+<tr><td>Final burette reading / cm³</td><td>12.40</td><td>12.15</td><td>12.10</td><td>12.15</td></tr>
+<tr><td>Initial burette reading / cm³</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>Volume of A used / cm³</td><td>12.40</td><td>12.15</td><td>12.10</td><td>12.15</td></tr>
+</table>
+
+<ol>
+<li>Calculate the average titre.</li>
+<li>Calculate concentration of B in \(mol\,dm^{-3}\).</li>
+<li>Calculate concentration of A in \(mol\,dm^{-3}\).</li>
+<li>Calculate mass concentration of A in \(g\,dm^{-3}\).</li>
+<li>Calculate moles of \(H^+\) in the average titre.</li>
+</ol>
+</div>
+
+<button onclick="toggleClass('model1class')">ENTER MODEL PAPER 1 SOLUTION CLASS</button>
+
+<div class="classroom" id="model1class">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+This is the exact type of calculation that can appear in WAEC. The secret is to respect the mole ratio \(1:2\).
+</p>
+</div>
+
+<div class="formula">
+\[
+Average=\frac{12.15+12.10+12.15}{3}=12.13cm^3
+\]
+\[
+Molar\ mass\ of\ NaOH=23+16+1=40g\,mol^{-1}
+\]
+\[
+C_B=\frac{4.0}{40}=0.100mol\,dm^{-3}
+\]
+\[
+H_2SO_4+2NaOH\rightarrow Na_2SO_4+2H_2O
+\]
+\[
+H_2SO_4:NaOH=1:2
+\]
+\[
+\frac{C_A\times12.13}{0.100\times25.0}=\frac{1}{2}
+\]
+\[
+C_A=\frac{0.100\times25.0}{2\times12.13}=0.103mol\,dm^{-3}
+\]
+\[
+Mass\ concentration=0.103\times98=10.1g\,dm^{-3}
+\]
+\[
+n(H_2SO_4)=\frac{0.103\times12.13}{1000}=1.25\times10^{-3}mol
+\]
+\[
+n(H^+)=2.50\times10^{-3}mol
+\]
+</div>
+
+<div class="success">
+Endpoint with phenolphthalein: pink to colourless.
+</div>
+</div>
+</section>
+
+<section id="model2">
+<h2>3. Model Paper 2 — Methyl Orange Variant</h2>
+
+<div class="lab">
+<h3>Question</h3>
+<p>
+A is dilute \(H_2SO_4\). B is \(0.100mol\,dm^{-3}\) NaOH solution.
+\(20.0cm^3\) of B was pipetted into a conical flask and titrated with A using methyl orange indicator.
+</p>
+
+<table>
+<tr><th>Titration</th><th>Rough</th><th>1st</th><th>2nd</th><th>3rd</th></tr>
+<tr><td>Final reading / cm³</td><td>10.20</td><td>9.80</td><td>9.75</td><td>9.80</td></tr>
+<tr><td>Initial reading / cm³</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>Titre / cm³</td><td>10.20</td><td>9.80</td><td>9.75</td><td>9.80</td></tr>
+</table>
+
+<ol>
+<li>Calculate the average titre.</li>
+<li>Calculate the concentration of A.</li>
+<li>Calculate the mass concentration of A.</li>
+<li>State the colour change of methyl orange.</li>
+</ol>
+</div>
+
+<button onclick="toggleClass('model2class')">ENTER MODEL PAPER 2 SOLUTION CLASS</button>
+
+<div class="classroom" id="model2class">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+The lower titre occurs because only \(20.0cm^3\) of NaOH was used instead of \(25.0cm^3\). Always connect titre size to volume used.
+</p>
+</div>
+
+<div class="formula">
+\[
+Average=\frac{9.80+9.75+9.80}{3}=9.78cm^3
+\]
+\[
+\frac{C_A\times9.78}{0.100\times20.0}=\frac{1}{2}
+\]
+\[
+C_A=\frac{0.100\times20.0}{2\times9.78}=0.102mol\,dm^{-3}
+\]
+\[
+Mass\ concentration=0.102\times98=10.0g\,dm^{-3}
+\]
+</div>
+
+<div class="success">
+Methyl orange colour change: yellow in alkali to orange/pink at endpoint.
+</div>
+</div>
+</section>
+
+<section id="hardcalc">
+<h2>4. Hard Calculation Masterclass</h2>
+
+<div class="lab">
+<h3>Task A: Find Mass in a Given Volume</h3>
+<p>
+If \(A=0.103mol\,dm^{-3}\) \(H_2SO_4\), calculate the mass of \(H_2SO_4\) in \(250cm^3\) of A.
+</p>
+
+<div class="formula">
+\[
+n=CV=\frac{0.103\times250}{1000}=0.02575mol
+\]
+\[
+mass=n\times molar\ mass=0.02575\times98=2.52g
+\]
+</div>
+
+<h3>Task B: Find Volume Needed for Neutralization</h3>
+<p>
+Calculate the volume of \(0.103mol\,dm^{-3}\) \(H_2SO_4\) needed to neutralize \(20.0cm^3\) of \(0.100mol\,dm^{-3}\) NaOH.
+</p>
+
+<div class="formula">
+\[
+\frac{C_A V_A}{C_B V_B}=\frac{1}{2}
+\]
+\[
+V_A=\frac{0.100\times20.0}{2\times0.103}=9.71cm^3
+\]
+</div>
+
+<h3>Task C: Calculate Percentage Error</h3>
+<p>
+A student obtained \(12.50cm^3\) instead of the correct \(12.13cm^3\). Calculate percentage error.
+</p>
+
+<div class="formula">
+\[
+Error=12.50-12.13=0.37cm^3
+\]
+\[
+\% error=\frac{0.37}{12.13}\times100=3.05\%
+\]
+</div>
+</div>
+
+<button onclick="toggleClass('hardclass')">ENTER HARD CALCULATION CLASS</button>
+
+<div class="classroom" id="hardclass">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+WAEC may not always stop at concentration. You should be ready for mass, volume, percentage error and moles of ions. The same data can generate many questions.
+</p>
+</div>
+
+<div class="student">
+<h3>Student</h3>
+<p>Sir, why do we divide cm³ by 1000?</p>
+</div>
+
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Because concentration in \(mol\,dm^{-3}\) works with volume in \(dm^3\). Since \(1000cm^3=1dm^3\), divide by 1000.
+</p>
+</div>
+</div>
+</section>
+
+<section id="graph">
+<h2>5. Result Analysis and Graphical Reasoning</h2>
+
+<p>
+Although WAEC chemistry titration usually relies on tables, students must understand how repeated readings show accuracy. Closely grouped titres show good technique.
+</p>
+
+<table>
+<tr><th>Student</th><th>Concordant Titres / cm³</th><th>Comment</th></tr>
+<tr><td>A</td><td>12.15, 12.10, 12.15</td><td>Excellent concordance</td></tr>
+<tr><td>B</td><td>12.10, 12.70, 13.20</td><td>Poor technique; likely endpoint error</td></tr>
+<tr><td>C</td><td>11.90, 12.00, 12.05</td><td>Close, but may have stopped slightly early</td></tr>
+</table>
+
+<div class="diagram">
+<img src="../assets/diagrams/burette-reading.png" alt="Correct burette reading at the meniscus" style="width:100%;max-height:420px;object-fit:contain;background:white;border-radius:12px;margin-bottom:12px">
+<strong>Teacher guide:</strong> Read the bottom of the meniscus at eye level and record to two decimal places. Good titre values cluster closely; poor titres scatter widely.
+</div>
+
+<div class="gold">
+WAEC PRACTICAL SKILL: Concordance is evidence of repeatability. A student who repeats carefully earns more confidence in the result.
+</div>
+</section>
+
+<section id="errors">
+<h2>6. Advanced Errors and Their Effects</h2>
+
+<table>
+<tr><th>Error</th><th>Effect on Titre</th><th>Effect on Calculated Acid Concentration</th></tr>
+<tr><td>Overshooting endpoint</td><td>Too high</td><td>Calculated acid concentration becomes too low</td></tr>
+<tr><td>Stopping before endpoint</td><td>Too low</td><td>Calculated acid concentration becomes too high</td></tr>
+<tr><td>Burette contains water before adding acid</td><td>May require larger titre</td><td>Acid appears less concentrated</td></tr>
+<tr><td>Pipette contains water before measuring alkali</td><td>May require smaller titre</td><td>Acid appears more concentrated</td></tr>
+<tr><td>Air bubble in burette jet</td><td>Unreliable; often too high</td><td>Acid concentration may be underestimated</td></tr>
+<tr><td>Reading top of meniscus instead of bottom</td><td>Wrong reading</td><td>Wrong concentration</td></tr>
+</table>
+
+<button onclick="toggleClass('errorclass')">ENTER ERROR ANALYSIS CLASS</button>
+
+<div class="classroom" id="errorclass">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+If titre is too high, your formula often makes the calculated acid concentration lower because the same amount of alkali appears to need more acid volume.
+</p>
+</div>
+
+<div class="student">
+<h3>Student</h3>
+<p>Sir, which is worse: wrong endpoint or wrong mole ratio?</p>
+</div>
+
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Wrong mole ratio is more dangerous because it affects every later calculation. Endpoint error affects the titre, but wrong ratio destroys the chemistry.
+</p>
+</div>
+</div>
+</section>
+
+<section id="summary">
+<h2>7. Final Quantitative Analysis Exam-Ready Summary</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Step 1</h3>
+<p>Write the balanced chemical equation.</p>
+</div>
+
+<div class="card">
+<h3>Step 2</h3>
+<p>Extract the mole ratio correctly.</p>
+</div>
+
+<div class="card">
+<h3>Step 3</h3>
+<p>Calculate average titre using only concordant titres.</p>
+</div>
+
+<div class="card">
+<h3>Step 4</h3>
+<p>Convert g dm⁻³ to mol dm⁻³ where necessary.</p>
+</div>
+
+<div class="card">
+<h3>Step 5</h3>
+<p>Substitute carefully and attach units.</p>
+</div>
+
+<div class="card">
+<h3>Step 6</h3>
+<p>Check whether your answer is chemically reasonable.</p>
+</div>
+</div>
+
+<div class="success">
+Final target: For \(25.0cm^3\) of \(0.100mol\,dm^{-3}\) NaOH, a titre around \(12.1cm^3\) of about \(0.103mol\,dm^{-3}\) \(H_2SO_4\) is realistic because \(H_2SO_4\) is dibasic.
+</div>
+
+<div class="warning">
+FINAL WAEC WARNING: Never ignore units, never average rough titre, never use an unbalanced equation, and never forget the \(1:2\) acid-alkali ratio.
+</div>
+</section>
+
+</main>
+
+<footer>
+<h3>CHIATECH STEM Academy</h3>
+<p>WAEC Chemistry Practical Quantitative Analysis Portal</p>
+<p>Learn • Know • Do • Create SUCCESS</p>
+</footer>
+
+<script>
+function toggleClass(id){
+  const el=document.getElementById(id);
+  if(!el) return;
+  el.style.display=el.style.display==="block"?"none":"block";
+  if(window.MathJax && window.MathJax.typesetPromise){
+    window.MathJax.typesetPromise();
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Part 1 Quantitative Analysis | WAEC Chemistry Practical</title>
+
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#eef4ff;color:#10233f;line-height:1.8}
+header{background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.72)),url('../assets/diagrams/titration-setup-labelled.PNG');background-size:cover;background-position:center;color:white;text-align:center;padding:90px 20px}
+header h1{font-size:clamp(2rem,5vw,4rem);margin-bottom:18px}
+header p{max-width:1100px;margin:auto;font-size:1.08rem}
+nav{background:#061225;padding:14px;position:sticky;top:0;z-index:1000}
+nav ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;list-style:none}
+nav a{color:white;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px}
+nav a:hover{background:#2563eb}
+main{max-width:1320px;margin:auto;padding:25px}
+section{background:white;margin-bottom:28px;padding:30px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+h2{color:#0b2d63;margin-bottom:16px;font-size:2rem}
+h3{color:#174ea6;margin:22px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px}
+.card{background:#f8fbff;border:1px solid #d6e4ff;border-radius:16px;padding:22px}
+.card img{width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:12px}
+.note{background:#dbeafe;border-left:8px solid #2563eb;padding:16px;border-radius:12px;margin:18px 0}
+.success{background:#dcfce7;border-left:8px solid #16a34a;padding:16px;border-radius:12px;margin:18px 0}
+.warning{background:#fee2e2;border-left:8px solid #dc2626;padding:16px;border-radius:12px;margin:18px 0}
+.gold{background:#fff7cc;border-left:8px solid #f59e0b;padding:16px;border-radius:12px;margin:18px 0}
+.lab{background:#f8fafc;border:1px solid #dbeafe;border-radius:18px;padding:24px;margin-top:18px}
+.formula{background:#eff6ff;border-left:6px solid #2563eb;border-radius:12px;padding:15px;margin:16px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin-top:18px}
+th{background:#0b2d63;color:white;padding:13px}
+td{border:1px solid #cbd5e1;padding:12px;vertical-align:top}
+button{background:#0b2d63;color:white;border:none;padding:14px 24px;border-radius:12px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:18px}
+button:hover{background:#2563eb}
+.classroom{display:none;background:#f1f7ff;border:2px dashed #2563eb;padding:26px;border-radius:18px;margin-top:22px}
+.teacher{background:white;border-left:7px solid #2563eb;border-radius:10px;padding:18px;margin-bottom:16px}
+.student{background:#fffdf4;border-left:7px solid #f59e0b;border-radius:10px;padding:18px;margin-bottom:16px}
+.diagram{border:2px dashed #94a3b8;background:#f8fafc;border-radius:16px;padding:18px;text-align:center;font-weight:700;color:#475569;margin:16px 0}
+ul,ol{margin-left:22px}
+li{margin-bottom:9px}
+footer{background:#061225;color:white;text-align:center;padding:40px 20px;margin-top:40px}
+@media(max-width:768px){section{padding:20px}header{padding:70px 15px}}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>QUANTITATIVE ANALYSIS — PART 1</h1>
+<p>
+WAEC Chemistry Practical titration masterclass. This lesson introduces students to quantitative analysis, acid-base titration, burette reading, concordant titres, mole ratio, concentration calculations and examiner-style reporting.
+</p>
+<div class="note">
+Part 1 focuses on the common WAEC titration pattern: acid in the burette, alkali in the conical flask, indicator endpoint, titration table and calculations.
+</div>
+</header>
+
+<nav>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#apparatus">Apparatus</a></li>
+<li><a href="#theory">Theory</a></li>
+<li><a href="#procedure">Procedure</a></li>
+<li><a href="#table">Titration Table</a></li>
+<li><a href="#calculation">Calculation</a></li>
+<li><a href="#classroom">Enter Class</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+</nav>
+
+<main>
+
+<section id="overview">
+<h2>1. What Quantitative Analysis Means</h2>
+
+<p>
+Quantitative analysis is the branch of chemistry practical that determines the amount, concentration, mass or percentage composition of a substance. In WAEC Chemistry Practical, the most common quantitative analysis is titration.
+</p>
+
+<p>
+Titration is a laboratory method used to find the concentration of a solution by reacting it with another solution of known concentration.
+</p>
+
+<div class="grid">
+<div class="card">
+<img src="../assets/diagrams/titration-setup.PNG" alt="">
+<h3>Titration Setup</h3>
+<p>Burette, pipette, conical flask, indicator and white tile are arranged to measure reacting volumes accurately.</p>
+</div>
+
+<div class="card">
+<img src="../assets/diagrams/burette-reading.png" alt="">
+<h3>Burette Reading</h3>
+<p>The burette reading must be read from the bottom of the meniscus at eye level and recorded to two decimal places.</p>
+</div>
+
+<div class="card">
+<img src="../assets/diagrams/titration-setup2.PNG" alt="">
+<h3>Concordant Titres</h3>
+<p>Two or more close titre values are used to calculate the average titre. The rough titre is not averaged.</p>
+</div>
+</div>
+
+<div class="warning">
+WAEC MARKING WARNING: Do not average the rough titre. Use only concordant accurate titres.
+</div>
+</section>
+
+<section id="apparatus">
+<h2>2. Apparatus and Their Functions</h2>
+
+<table>
+<tr><th>Apparatus</th><th>Function</th><th>WAEC Accuracy Point</th></tr>
+<tr><td>Burette</td><td>Delivers acid or alkali gradually during titration.</td><td>Read to 2 decimal places, e.g. 12.10 cm³.</td></tr>
+<tr><td>Pipette</td><td>Measures a fixed volume, usually 20.0 cm³ or 25.0 cm³.</td><td>Rinse with the solution it will measure.</td></tr>
+<tr><td>Conical flask</td><td>Holds the solution being titrated.</td><td>Can be rinsed with distilled water only.</td></tr>
+<tr><td>White tile</td><td>Makes endpoint colour change clear.</td><td>Prevents overshooting the endpoint.</td></tr>
+<tr><td>Indicator</td><td>Shows the endpoint by colour change.</td><td>Use 2–3 drops only.</td></tr>
+<tr><td>Retort stand and clamp</td><td>Holds the burette vertically.</td><td>Burette must not be slanted.</td></tr>
+</table>
+
+<div class="diagram">
+<img src="../assets/diagrams/titration-setup-labelled.PNG" alt="Labelled titration setup" style="width:100%;max-height:420px;object-fit:contain;background:white;border-radius:12px;margin-bottom:12px">
+<strong>Teacher guide:</strong> Label the burette, clamp, retort stand, acid A, conical flask, alkali B, white tile and indicator. The burette must stand vertically so the reading is accurate.
+</div>
+</section>
+
+<section id="theory">
+<h2>3. Core Theory of Acid-Base Titration</h2>
+
+<p>
+In this WAEC model, A is dilute tetraoxosulphate(VI) acid, \(H_2SO_4\), and B is sodium hydroxide solution, \(NaOH\).
+</p>
+
+<div class="formula">
+\[
+H_2SO_4(aq)+2NaOH(aq)\rightarrow Na_2SO_4(aq)+2H_2O(l)
+\]
+</div>
+
+<p>
+The mole ratio from the balanced equation is:
+</p>
+
+<div class="formula">
+\[
+H_2SO_4 : NaOH = 1 : 2
+\]
+</div>
+
+<div class="note">
+This is the most important part of the calculation. If the mole ratio is wrong, the final concentration will be wrong.
+</div>
+
+<h3>Useful Formulae</h3>
+
+<div class="formula">
+\[
+n = CV
+\]
+</div>
+
+<p>
+where \(n\) = number of moles, \(C\) = concentration in \(mol\,dm^{-3}\), and \(V\) = volume in \(dm^3\).
+</p>
+
+<div class="formula">
+\[
+\frac{C_A V_A}{C_B V_B}=\frac{n_A}{n_B}
+\]
+</div>
+
+<p>
+For \(H_2SO_4\) and \(NaOH\):
+</p>
+
+<div class="formula">
+\[
+\frac{C_A V_A}{C_B V_B}=\frac{1}{2}
+\]
+</div>
+</section>
+
+<section id="procedure">
+<h2>4. WAEC Titration Procedure</h2>
+
+<div class="lab">
+<h3>Aim</h3>
+<p>To determine the concentration of dilute \(H_2SO_4\) using a standard NaOH solution.</p>
+
+<h3>Procedure</h3>
+<ol>
+<li>Rinse the burette with A and fill it with A.</li>
+<li>Remove air bubbles from the jet of the burette.</li>
+<li>Record the initial burette reading.</li>
+<li>Rinse the pipette with B.</li>
+<li>Pipette 25.0 cm³ of B into a conical flask.</li>
+<li>Add 2–3 drops of phenolphthalein.</li>
+<li>Place the conical flask on a white tile.</li>
+<li>Run A from the burette into B while swirling continuously.</li>
+<li>Near endpoint, add A drop by drop.</li>
+<li>Stop when the pink colour just disappears.</li>
+<li>Record the final burette reading.</li>
+<li>Repeat until concordant titres are obtained.</li>
+</ol>
+
+<div class="success">
+Correct endpoint for phenolphthalein when NaOH is in the flask: pink to colourless.
+</div>
+</div>
+
+<button onclick="toggleClass('procedureclass')">ENTER PROCEDURE CLASS</button>
+
+<div class="classroom" id="procedureclass">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Students, titration is not pouring acid into alkali. It is controlled addition. Your hand controls the burette tap, your other hand swirls the flask, and your eyes watch the colour.
+</p>
+</div>
+
+<div class="student">
+<h3>Student</h3>
+<p>Sir, why do we add the acid dropwise near the endpoint?</p>
+</div>
+
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Because one extra drop can overshoot the endpoint and make your titre too high. WAEC rewards careful endpoint control.
+</p>
+</div>
+
+<div class="teacher">
+<h3>Practical Reality</h3>
+<ul>
+<li>If you stop too early, titre becomes too low.</li>
+<li>If you overshoot, titre becomes too high.</li>
+<li>If air bubble remains in the burette jet, titre becomes inaccurate.</li>
+<li>If the burette is not vertical, reading becomes unreliable.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="table">
+<h2>5. Correct WAEC Titration Table</h2>
+
+<p>
+A good titration table must contain initial reading, final reading and volume used. Readings must be recorded to two decimal places.
+</p>
+
+<table>
+<tr><th>Titration</th><th>Rough</th><th>1st</th><th>2nd</th><th>3rd</th></tr>
+<tr><td>Final burette reading / cm³</td><td>12.40</td><td>12.15</td><td>12.10</td><td>12.15</td></tr>
+<tr><td>Initial burette reading / cm³</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<tr><td>Volume of A used / cm³</td><td>12.40</td><td>12.15</td><td>12.10</td><td>12.15</td></tr>
+</table>
+
+<div class="formula">
+\[
+Average\ titre=\frac{12.15+12.10+12.15}{3}=12.13cm^3
+\]
+</div>
+
+<div class="gold">
+WAEC TIP: The rough titre is used only to locate the endpoint. It is not part of the average.
+</div>
+
+<button onclick="toggleClass('tableclass')">ENTER TITRATION TABLE CLASS</button>
+
+<div class="classroom" id="tableclass">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+The table itself carries marks. Even if your calculations are correct, a poor table can reduce your score.
+</p>
+</div>
+
+<div class="teacher">
+<h3>How WAEC Sees the Table</h3>
+<ul>
+<li>Correct headings attract marks.</li>
+<li>Correct units attract marks.</li>
+<li>Readings to two decimal places attract marks.</li>
+<li>Concordant titres attract marks.</li>
+<li>Correct average attracts marks.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="calculation">
+<h2>6. Full WAEC Calculation Class</h2>
+
+<div class="lab">
+<h3>Given</h3>
+<ul>
+<li>B contains \(4.0g\,dm^{-3}\) of NaOH.</li>
+<li>Volume of B pipetted = \(25.0cm^3\).</li>
+<li>Average volume of A used = \(12.13cm^3\).</li>
+<li>Equation: \(H_2SO_4 + 2NaOH \rightarrow Na_2SO_4 + 2H_2O\).</li>
+</ul>
+
+<h3>Step 1: Concentration of B</h3>
+
+<div class="formula">
+\[
+Molar\ mass\ of\ NaOH=23+16+1=40g\,mol^{-1}
+\]
+\[
+C_B=\frac{4.0}{40}=0.100mol\,dm^{-3}
+\]
+</div>
+
+<h3>Step 2: Concentration of A</h3>
+
+<div class="formula">
+\[
+\frac{C_A V_A}{C_B V_B}=\frac{1}{2}
+\]
+\[
+\frac{C_A\times12.13}{0.100\times25.0}=\frac{1}{2}
+\]
+\[
+C_A=\frac{0.100\times25.0}{2\times12.13}=0.103mol\,dm^{-3}
+\]
+</div>
+
+<h3>Step 3: Mass Concentration of A</h3>
+
+<div class="formula">
+\[
+Molar\ mass\ of\ H_2SO_4=2(1)+32+4(16)=98g\,mol^{-1}
+\]
+\[
+Mass\ concentration=0.103\times98=10.1g\,dm^{-3}
+\]
+</div>
+</div>
+
+<button onclick="toggleClass('calculationclass')">ENTER CALCULATION CLASS</button>
+
+<div class="classroom" id="calculationclass">
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Students, never rush titration calculations. Start from the equation. The equation tells you the mole ratio.
+</p>
+</div>
+
+<div class="student">
+<h3>Student</h3>
+<p>Sir, why did we divide by 2?</p>
+</div>
+
+<div class="teacher">
+<h3>Teacher</h3>
+<p>
+Because 1 mole of \(H_2SO_4\) reacts with 2 moles of NaOH. Therefore the acid mole value is half the alkali mole value for the reacting amounts.
+</p>
+</div>
+
+<div class="teacher">
+<h3>Industry Connection</h3>
+<p>
+Titration is used in water treatment, food industries, pharmaceutical quality control, fertilizer production, soap making and environmental monitoring.
+</p>
+</div>
+</div>
+</section>
+
+<section id="errors">
+<h2>7. Errors That Affect Titre Values</h2>
+
+<table>
+<tr><th>Error</th><th>Effect</th><th>Reason</th></tr>
+<tr><td>Overshooting endpoint</td><td>Titre too high</td><td>Too much acid added.</td></tr>
+<tr><td>Stopping before endpoint</td><td>Titre too low</td><td>Neutralization incomplete.</td></tr>
+<tr><td>Air bubble in burette jet</td><td>Titre unreliable/usually high</td><td>Part of burette volume fills air space first.</td></tr>
+<tr><td>Burette rinsed with water only</td><td>Solution in burette diluted</td><td>Concentration changes.</td></tr>
+<tr><td>Pipette not rinsed with B</td><td>B may be diluted</td><td>Measured moles of B reduce.</td></tr>
+<tr><td>Parallax error</td><td>Wrong reading</td><td>Eye not level with meniscus.</td></tr>
+</table>
+
+<div class="warning">
+FINAL WARNING: In WAEC, values alone are not enough. You must show working, units and correct mole ratio.
+</div>
+</section>
+
+<section id="summary">
+<h2>8. Part 1 Exam-Ready Summary</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Quantitative Analysis</h3>
+<p>Determines amount or concentration of a substance.</p>
+</div>
+
+<div class="card">
+<h3>Titration</h3>
+<p>A method for finding unknown concentration using a standard solution.</p>
+</div>
+
+<div class="card">
+<h3>Phenolphthalein Endpoint</h3>
+<p>Pink to colourless when acid is added to alkali.</p>
+</div>
+
+<div class="card">
+<h3>Mole Ratio</h3>
+<p>\(H_2SO_4:NaOH = 1:2\).</p>
+</div>
+
+<div class="card">
+<h3>Concordant Titres</h3>
+<p>Close titre values used for averaging. Rough titre is ignored.</p>
+</div>
+
+<div class="card">
+<h3>Accuracy Rule</h3>
+<p>Read burette at eye level and record to 2 decimal places.</p>
+</div>
+</div>
+
+<div class="success">
+You are ready for Quantitative Analysis Part 2: advanced titration calculations, dilution, percentage purity and WAEC problem-solving.
+</div>
+</section>
+
+</main>
+
+<footer>
+<h3>CHIATECH STEM Academy</h3>
+<p>WAEC Chemistry Practical Quantitative Analysis Portal</p>
+<p>Learn • Know • Do • Create SUCCESS</p>
+</footer>
+
+<script>
+function toggleClass(id){
+  const el=document.getElementById(id);
+  if(!el) return;
+  el.style.display=el.style.display==="block"?"none":"block";
+  if(window.MathJax && window.MathJax.typesetPromise){
+    window.MathJax.typesetPromise();
+  }
+}
+</script>
+
+</body>
+</html>
