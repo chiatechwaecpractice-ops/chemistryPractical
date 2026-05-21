@@ -1,4 +1,4 @@
-const CACHE_NAME = "chiatech-chem-practical-2026-05-21";
+const CACHE_NAME = "chiatech-chem-practical-2026-05-22";
 
 const CORE_ASSETS = [
   "./",
@@ -42,6 +42,11 @@ const CORE_ASSETS = [
   "./QualitativeAnalysis/prt1qlativeanalysis.html",
   "./QualitativeAnalysis/prt2qualitativeanalysis.html",
   "./QualitativeAnalysis/prt3qualitativeanalysis.html",
+  "./test1/test1.html",
+  "./test2/test2.html",
+  "./test3/test3.html",
+  "./test4/test4.html",
+  "./test5/test5.html",
   "./test6/test6.html",
   "./test7/test7.html",
   "./test8/test8.html",
@@ -49,6 +54,7 @@ const CORE_ASSETS = [
   "./test10/test10.html",
   "./test11/test11.html",
   "./test12/test12.html",
+  "./test13/test13.html",
   "./test14/test14.html",
   "./test15/test15.html",
   "./test16/test16.html"

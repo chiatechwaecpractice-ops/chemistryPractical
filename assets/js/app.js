@@ -4,15 +4,15 @@
   const STORAGE_KEY = "chiatechChemAuth";
   const DEVICE_KEY = "chiatechChemDevice";
   const PIN_KEY = "chiatechChemPin";
-  const CACHE_VERSION = "2026.05.21";
+  const CACHE_VERSION = "2026.05.22";
   const appConfig = window.PORTAL_CONFIG || {};
 
   const tests = [
-    ["Test 1", "test1/Chemistry Paper 3, May-June 2023.pdf", "2023 practical paper"],
-    ["Test 2", "test2/Chemistry Paper 3, May-June 2023.pdf", "2023 practical paper"],
-    ["Test 3", "test3/Chemistry Paper 3, May-June 2023.pdf", "2023 practical paper"],
-    ["Test 4", "test4/Chemistry Paper 3, May-June 2023.pdf", "2023 practical paper"],
-    ["Test 5", "test5/Chemistry Paper 3, May-June 2023.pdf", "2023 practical paper"],
+    ["Test 1", "test1/test1.html", "WAEC 3-question practice"],
+    ["Test 2", "test2/test2.html", "WAEC 3-question practice"],
+    ["Test 3", "test3/test3.html", "WAEC 3-question practice"],
+    ["Test 4", "test4/test4.html", "WAEC 3-question practice"],
+    ["Test 5", "test5/test5.html", "WAEC 3-question practice"],
     ["Test 6", "test6/test6.html", "Guided WAEC simulation"],
     ["Test 7", "test7/test7.html", "Guided WAEC simulation"],
     ["Test 8", "test8/test8.html", "Guided WAEC simulation"],
@@ -20,6 +20,7 @@
     ["Test 10", "test10/test10.html", "Extended marking scheme"],
     ["Test 11", "test11/test11.html", "Extended marking scheme"],
     ["Test 12", "test12/test12.html", "Extended marking scheme"],
+    ["Test 13", "test13/test13.html", "Market test correction"],
     ["Test 14", "test14/test14.html", "Set 2 Alternative B practice"],
     ["Test 15", "test15/test15.html", "Set 2 A1 strengthening drill"],
     ["Test 16", "test16/test16.html", "Set 2 final A1 readiness"]
