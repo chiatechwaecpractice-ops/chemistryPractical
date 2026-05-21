@@ -3,7 +3,8 @@
 
   const STORAGE_KEY = "chiatechChemAuth";
   const DEVICE_KEY = "chiatechChemDevice";
-  const CACHE_VERSION = "2026.05.19";
+  const PIN_KEY = "chiatechChemPin";
+  const CACHE_VERSION = "2026.05.21";
   const appConfig = window.PORTAL_CONFIG || {};
 
   const tests = [
@@ -18,7 +19,10 @@
     ["Test 9", "test9/test9.html", "Guided WAEC simulation"],
     ["Test 10", "test10/test10.html", "Extended marking scheme"],
     ["Test 11", "test11/test11.html", "Extended marking scheme"],
-    ["Test 12", "test12/test12.html", "Extended marking scheme"]
+    ["Test 12", "test12/test12.html", "Extended marking scheme"],
+    ["Test 14", "test14/test14.html", "Set 2 Alternative B practice"],
+    ["Test 15", "test15/test15.html", "Set 2 A1 strengthening drill"],
+    ["Test 16", "test16/test16.html", "Set 2 final A1 readiness"]
   ];
 
   const authGate = document.getElementById("authGate");
@@ -34,6 +38,7 @@
   const installButtons = [document.getElementById("installApp"), document.getElementById("installAppTop")];
 
   let installPrompt = null;
+  let refreshingForUpdate = false;
 
   function deviceId(){
     let id = localStorage.getItem(DEVICE_KEY);
@@ -144,6 +149,7 @@
       };
       if(session.offlineAllowed){
         localStorage.setItem(STORAGE_KEY, JSON.stringify(session));
+        localStorage.setItem(PIN_KEY, pin);
       }
       setMessage("Welcome. Your class is ready.", "ok");
       openPortal(session, "online");
@@ -163,7 +169,10 @@
     else setMessage("Enter your PIN first on this device, then you can continue learning here later.", "error");
   });
 
-  lockApp.addEventListener("click", lockPortal);
+  lockApp.addEventListener("click", () => {
+    localStorage.removeItem(PIN_KEY);
+    lockPortal();
+  });
 
   function renderTests(){
     const grid = document.getElementById("testGrid");
@@ -192,6 +201,7 @@
   function warmOfflineCache(){
     if("serviceWorker" in navigator){
       navigator.serviceWorker.register("service-worker.js").then(registration => {
+        watchForUpdates(registration);
         if(registration.active){
           registration.active.postMessage({type:"WARM_CACHE"});
         }
@@ -199,6 +209,44 @@
         syncText.textContent = "Lessons are available while this page stays open";
       });
     }
+  }
+
+  function watchForUpdates(registration){
+    if(registration.waiting){
+      showUpdatePrompt(registration);
+    }
+    registration.addEventListener("updatefound", () => {
+      const worker = registration.installing;
+      if(!worker) return;
+      worker.addEventListener("statechange", () => {
+        if(worker.state === "installed" && navigator.serviceWorker.controller){
+          showUpdatePrompt(registration);
+        }
+      });
+    });
+  }
+
+  function showUpdatePrompt(registration){
+    if(document.getElementById("updateNotice")) return;
+    const notice = document.createElement("div");
+    notice.id = "updateNotice";
+    notice.className = "update-notice";
+    notice.innerHTML = `
+      <strong>New lessons are ready.</strong>
+      <span>Refresh now to open the updated practical tests. Your access will remain saved on this device.</span>
+      <button type="button" id="applyUpdate">Refresh now</button>
+      <button type="button" id="dismissUpdate">Later</button>
+    `;
+    document.body.appendChild(notice);
+    document.getElementById("applyUpdate").addEventListener("click", () => {
+      refreshingForUpdate = true;
+      if(registration.waiting){
+        registration.waiting.postMessage({type:"SKIP_WAITING"});
+      }else{
+        location.reload();
+      }
+    });
+    document.getElementById("dismissUpdate").addEventListener("click", () => notice.remove());
   }
 
   window.addEventListener("hashchange", route);
@@ -216,6 +264,14 @@
       syncText.textContent = "Opened from this device";
     }
   });
+
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if(refreshingForUpdate){
+        location.reload();
+      }
+    });
+  }
 
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
@@ -236,10 +292,48 @@
     });
   });
 
-  authGate.hidden = false;
-  appShell.hidden = true;
-  if(savedSession()){
-    setMessage("Welcome back. Enter your PIN or continue learning on this device.", "");
+  startAccessFlow();
+
+  async function startAccessFlow(){
+    authGate.hidden = false;
+    appShell.hidden = true;
+    const session = savedSession();
+    if(!session) return;
+
+    const storedPin = localStorage.getItem(PIN_KEY);
+    if(navigator.onLine && storedPin){
+      setMessage("Refreshing your class access...", "");
+      try{
+        const result = await verifyPin(storedPin);
+        const refreshed = {
+          name: result.name || session.name || "Student",
+          email: result.email || session.email || "",
+          phone: result.phone || session.phone || "",
+          offlineAllowed: result.offlineAllowed !== false,
+          deviceId: deviceId(),
+          pinRef: result.pinRef || session.pinRef || "",
+          expiresAt: result.expiresAt || session.expiresAt || (Date.now() + 1000 * 60 * 60 * 24 * 180),
+          savedAt: Date.now()
+        };
+        if(refreshed.offlineAllowed){
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(refreshed));
+          openPortal(refreshed, "online");
+        }else{
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem(PIN_KEY);
+          setMessage("Please enter your PIN to continue.", "");
+        }
+      }catch(error){
+        setMessage("Welcome back. Continue learning on this device or enter your PIN again.", "");
+      }
+      return;
+    }
+
+    if(!navigator.onLine){
+      openPortal(session, "offline");
+    }else{
+      setMessage("Welcome back. Enter your PIN or continue learning on this device.", "");
+    }
   }
 
   function deviceName(){

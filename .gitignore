@@ -6,3 +6,5 @@ server.err.log
 node_modules/
 .netlify/
 .wrangler/
+test 13/
+assets/test13-source/

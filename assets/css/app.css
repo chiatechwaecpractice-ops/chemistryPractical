@@ -186,6 +186,31 @@ th{background:#eef7f5;color:var(--teal-dark)}
 .test-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px}
 .test-card strong{font-size:1.12rem}
 .test-card a{margin-top:auto;color:var(--blue);font-weight:800;text-decoration:none}
+.update-notice{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:50;
+  width:min(420px,calc(100vw - 36px));
+  background:white;
+  border:1px solid var(--line);
+  border-left:6px solid var(--teal);
+  border-radius:8px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  display:grid;
+  gap:10px;
+}
+.update-notice span{color:var(--muted)}
+.update-notice button{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:10px 12px;
+  font-weight:800;
+  cursor:pointer;
+  background:#f8fafc;
+}
+.update-notice #applyUpdate{background:var(--teal);color:white;border-color:var(--teal)}
 
 @media(max-width:900px){
   .app-shell{grid-template-columns:1fr}

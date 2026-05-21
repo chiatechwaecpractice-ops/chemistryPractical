@@ -1,4 +1,4 @@
-const CACHE_NAME = "chiatech-chem-practical-2026-05-19";
+const CACHE_NAME = "chiatech-chem-practical-2026-05-21";
 
 const CORE_ASSETS = [
   "./",
@@ -48,7 +48,10 @@ const CORE_ASSETS = [
   "./test9/test9.html",
   "./test10/test10.html",
   "./test11/test11.html",
-  "./test12/test12.html"
+  "./test12/test12.html",
+  "./test14/test14.html",
+  "./test15/test15.html",
+  "./test16/test16.html"
 ];
 
 self.addEventListener("install", event => {
@@ -70,6 +73,9 @@ self.addEventListener("activate", event => {
 self.addEventListener("message", event => {
   if(event.data && event.data.type === "WARM_CACHE"){
     event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)));
+  }
+  if(event.data && event.data.type === "SKIP_WAITING"){
+    self.skipWaiting();
   }
 });
 

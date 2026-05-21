@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WAEC Chemistry Practical Test 14</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] }, svg: { fontCache: 'global' } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.75}
+header{background:linear-gradient(135deg,#042f2e,#0f766e,#14b8a6);color:white;text-align:center;padding:46px 18px}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.6rem)}
+header p{max-width:1050px;margin:14px auto 0}
+main{max-width:1220px;margin:auto;padding:24px 14px 80px}
+section{background:white;margin:22px 0;padding:24px;border-radius:18px;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+h2{color:#0f766e;margin-top:0} h3{color:#1d4ed8;margin-top:26px} h4{margin-bottom:6px}
+button{border:0;background:#0f766e;color:white;padding:12px 18px;border-radius:10px;font-weight:800;cursor:pointer;margin:8px 6px 8px 0}
+.blue{background:#1d4ed8}.gold{background:#b45309}.hidden{display:none}
+.note{background:#ecfdf5;border-left:5px solid #10b981;padding:14px;border-radius:12px;margin:14px 0}
+.warn{background:#fff7ed;border-left:5px solid #f97316;padding:14px;border-radius:12px;margin:14px 0}
+.talk{background:#f8fafc;border-left:5px solid #6366f1;padding:14px;border-radius:12px;margin:14px 0}
+.formula{background:#eff6ff;border-left:5px solid #2563eb;padding:14px;border-radius:12px;margin:14px 0;overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:white}
+th,td{border:1px solid #cbd5e1;padding:10px;vertical-align:top} th{background:#0f766e;color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#f8fafc;border:1px solid #dbeafe;border-radius:14px;padding:18px}
+.card img{width:100%;height:220px;object-fit:contain;background:white;border-radius:12px}
+footer{background:#020617;color:white;text-align:center;padding:25px}
+@media print{button{display:none}section{box-shadow:none;break-inside:avoid}body{background:white}}
+</style>
+</head>
+<body>
+<header>
+  <h1>WAEC Chemistry Practical - Test 14</h1>
+  <p>Set 2 Alternative B practice: redox titration, copper(II) salt analysis, starch test and practical theory.</p>
+</header>
+<main>
+<section>
+  <h2>Specimens and Reagents</h2>
+  <div class="grid">
+    <div class="card"><h3>D</h3><p>\(6.30\,g\,dm^{-3}\) ethanedioic acid dihydrate, \(H_2C_2O_4\cdot2H_2O\).</p></div>
+    <div class="card"><h3>E</h3><p>\(3.10\,g\,dm^{-3}\) potassium tetraoxomanganate(VII), \(KMnO_4\).</p></div>
+    <div class="card"><h3>F</h3><p>Uniform 1:1 mixture of copper(II) tetraoxosulphate(VI) and starch.</p></div>
+  </div>
+  <div class="warn">Use only the supplied reagents: NaOH, HCl, HNO3, AgNO3, Pb(NO3)2, NH3, iodine, litmus, H2SO4, zinc dust, BaCl2, methyl orange and phenolphthalein.</div>
+</section>
+
+<section>
+  <h2>Teacher Class Before the Test</h2>
+  <button onclick="toggleBlock('classroom')">ENTER CLASS</button>
+  <div id="classroom" class="hidden">
+    <div class="talk"><strong>Teacher:</strong> This set uses acidified \(KMnO_4\) and ethanedioic acid. The endpoint is a permanent pale pink colour because \(KMnO_4\) acts as its own indicator.</div>
+    <div class="formula">\[2MnO_4^-+5C_2O_4^{2-}+16H^+\rightarrow2Mn^{2+}+10CO_2+8H_2O\]</div>
+    <div class="talk"><strong>Teacher:</strong> F contains copper(II) salt and starch. Copper(II) gives blue solution and blue precipitate tests; starch gives blue-black colour with iodine.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Enter Test 14 Question Paper</h2>
+  <button class="gold" onclick="toggleBlock('paper')">OPEN TEST 14</button>
+  <div id="paper" class="hidden">
+    <h3>Question 1 - Quantitative Analysis</h3>
+    <p>D is \(0.0500\,mol\,dm^{-3}\) ethanedioic acid. E is \(KMnO_4\) solution.</p>
+    <p>Put E in the burette. Pipette \(25.0\,cm^3\) of D into a conical flask. Add about \(10\,cm^3\) of dilute \(H_2SO_4\), warm gently and titrate with E until a permanent pale pink colour is obtained.</p>
+    <ol>
+      <li>Tabulate your burette readings.</li>
+      <li>Calculate the average titre.</li>
+      <li>Calculate the concentration of E in \(mol\,dm^{-3}\).</li>
+      <li>Calculate the concentration of E in \(g\,dm^{-3}\). [\(KMnO_4=158\)]</li>
+      <li>Calculate the percentage purity of E if the label states \(3.10\,g\,dm^{-3}\).</li>
+    </ol>
+    <h3>Question 2 - Qualitative Analysis</h3>
+    <p>F is a mixture of copper(II) tetraoxosulphate(VI) and starch. Record observations and inferences.</p>
+    <ol>
+      <li>Add distilled water to F, shake and filter. Keep the filtrate and residue.</li>
+      <li>Add iodine solution to a little residue.</li>
+      <li>To the filtrate, add NaOH in drops and then in excess.</li>
+      <li>To another portion, add NH3 in drops and then in excess.</li>
+      <li>To another portion, add BaCl2 followed by dilute HCl.</li>
+      <li>To another portion, add a little zinc dust and shake.</li>
+    </ol>
+    <h3>Question 3 - Practical Knowledge</h3>
+    <ol>
+      <li>Why is dilute \(H_2SO_4\) added before the redox titration?</li>
+      <li>Why is the solution warmed before titration?</li>
+      <li>State the endpoint colour in the titration.</li>
+      <li>State the confirmatory test for starch.</li>
+      <li>Draw and label the titration setup and a filtration setup.</li>
+    </ol>
+    <button class="blue" onclick="toggleBlock('solution')">VIEW BEST TEACHER SOLUTION</button>
+  </div>
+</section>
+
+<section id="solution" class="hidden">
+  <h2>Best WAEC-Style Solution and Teacher Explanation</h2>
+  <h3>Question 1 Solution</h3>
+  <table>
+    <tr><th>Titration</th><th>Rough</th><th>1st</th><th>2nd</th><th>3rd</th></tr>
+    <tr><td>Final reading / cm3</td><td>25.80</td><td>25.50</td><td>25.45</td><td>25.50</td></tr>
+    <tr><td>Initial reading / cm3</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+    <tr><td>Volume of E used / cm3</td><td>25.80</td><td>25.50</td><td>25.45</td><td>25.50</td></tr>
+  </table>
+  <div class="formula">\[Average=\frac{25.50+25.45+25.50}{3}=25.48\,cm^3\]</div>
+  <div class="formula">\[n(C_2O_4^{2-})=\frac{0.0500\times25.0}{1000}=1.25\times10^{-3}\,mol\]</div>
+  <div class="formula">\[n(MnO_4^-)=\frac{2}{5}\times1.25\times10^{-3}=5.00\times10^{-4}\,mol\]</div>
+  <div class="formula">\[C_E=\frac{5.00\times10^{-4}\times1000}{25.48}=1.96\times10^{-2}\,mol\,dm^{-3}\]</div>
+  <div class="formula">\[Mass\ concentration=0.0196\times158=3.10\,g\,dm^{-3}\]</div>
+  <p>Percentage purity \(=\frac{3.10}{3.10}\times100=100\%\).</p>
+
+  <h3>Question 2 Solution</h3>
+  <table>
+    <tr><th>Test</th><th>Observation</th><th>Inference</th></tr>
+    <tr><td>F + water, filter</td><td>Blue filtrate and residue obtained.</td><td>Soluble copper(II) salt and insoluble starch present.</td></tr>
+    <tr><td>Residue + iodine</td><td>Blue-black colouration.</td><td>Starch confirmed.</td></tr>
+    <tr><td>Filtrate + NaOH</td><td>Blue precipitate insoluble in excess.</td><td>\(Cu^{2+}\) present.</td></tr>
+    <tr><td>Filtrate + NH3</td><td>Pale blue precipitate dissolves in excess to deep blue solution.</td><td>\(Cu^{2+}\) confirmed.</td></tr>
+    <tr><td>Filtrate + BaCl2 + HCl</td><td>White precipitate insoluble in acid.</td><td>\(SO_4^{2-}\) present.</td></tr>
+    <tr><td>Filtrate + zinc dust</td><td>Blue colour fades; reddish-brown deposit forms.</td><td>Copper is displaced by zinc.</td></tr>
+  </table>
+
+  <h3>Question 3 Diagram Teacher Guide</h3>
+  <div class="grid">
+    <div class="card"><img src="../assets/diagrams/titration-setup-labelled.PNG" alt="Titration setup"><h3>Redox Titration</h3><p><strong>Teacher:</strong> E is in the burette, D plus dilute H2SO4 is in the flask. Warm before titration and stop at permanent pale pink.</p></div>
+    <div class="card"><img src="../assets/diagrams/filtration.png" alt="Filtration setup"><h3>Filtration</h3><p><strong>Teacher:</strong> Residue remains on filter paper; filtrate passes into the beaker. Test both parts separately.</p></div>
+    <div class="card"><img src="../assets/diagrams/colorofprecipitates.PNG" alt="Precipitate colours"><h3>Copper(II) Tests</h3><p><strong>Teacher:</strong> Blue precipitate and deep blue ammonia solution are strong evidence for \(Cu^{2+}\).</p></div>
+  </div>
+  <ol>
+    <li>Dilute \(H_2SO_4\) supplies \(H^+\) needed for \(MnO_4^-\) to reduce to \(Mn^{2+}\).</li>
+    <li>Warming increases the rate of reaction between \(KMnO_4\) and ethanedioic acid.</li>
+    <li>Endpoint: permanent pale pink.</li>
+    <li>Starch: iodine gives blue-black colouration.</li>
+  </ol>
+</section>
+</main>
+<footer>CHIATECH WAEC Chemistry Practical Portal | Test 14</footer>
+<script>
+function toggleBlock(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.style.display=el.style.display==="block"?"none":"block";
+  if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetPromise();}
+}
+</script>
+</body>
+</html>
